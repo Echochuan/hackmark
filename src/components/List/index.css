@@ -1,0 +1,17 @@
+.nameEnter {
+    width: 20%;
+    min-width: 150px;
+}
+
+.buttonGroups{
+    margin-top: 8%;
+}
+
+.eachButton{
+    outline: none;                     
+    height: 100px;
+    width: 100px;
+    margin-left: 10%;
+    border-radius: 100%;
+    font-size: 30px;
+}

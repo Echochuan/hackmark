@@ -13,3 +13,14 @@
   .site-layout-background {
     background: #fff;
   }
+
+  .title {
+    height: 50px;
+    width: 500px;
+    min-width: 200px;
+    margin: 15px 15px 15px 15px;
+}
+.title {
+    margin: auto;
+    font-size: 35px;
+}
