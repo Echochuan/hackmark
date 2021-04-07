@@ -9,6 +9,7 @@ const { Header, Content, Footer, Sider } = Layout;
 class App extends React.Component{
 render(){
   return(
+    <div>
   <Layout>
     <Sider
       breakpoint="lg"
@@ -41,7 +42,9 @@ render(){
       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
     </Layout>
   </Layout>
+    </div>
   )
+
 }
 }
 
