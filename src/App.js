@@ -8,7 +8,7 @@ import design from "./components/Design/index";
 import front from "./components/Front/index";
 import back from "./components/Back/index";
 
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { Layout, Menu } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
@@ -43,7 +43,7 @@ render(){
         </p>
       </Header>
       <Content style={{ margin: '24px 16px 0' }}>
-        <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+        <div className="site-layout-background" style={{ padding: 24, minHeight: 600 }}>
           <Route exact path='/' component={List}></Route>
           <Route path='/director' component={director}></Route>
           <Route path='/design' component={design}></Route>

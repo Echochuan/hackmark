@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import "./index.css"
 
-import { Input} from 'antd';
+import { Input } from 'antd';
 
 
 export default class List extends Component {
 
   render() {
     return (
-      <div>
+      <div className="list">
         <div className="nameEnter">
           <Input placeholder="请输入你的名字" />
         </div>
-        {/* <Route path='/director' component={director}></Route> */}
+        <p className="chooseTip">请选择你要评分的职位:</p>
         <div className="buttonGroups">
           <a href='/director'>
             <button href='/director' className="eachButton" >运营</button>
