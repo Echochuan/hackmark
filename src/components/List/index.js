@@ -12,7 +12,9 @@ export default class List extends Component {
         <div className="nameEnter">
           <Input placeholder="请输入你的名字" />
         </div>
-        <p className="chooseTip">请选择你要评分的职位:</p>
+        <div className="usertip">
+          <p>请选择你要评分的职位:</p>
+        </div>
         <div className="buttonGroups">
           <a href='/director'>
             <button href='/director' className="eachButton" >运营</button>

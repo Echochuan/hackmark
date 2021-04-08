@@ -4,7 +4,7 @@ export default class index extends Component {
     render() {
         return (
             <div>
-                <button className="eachButton">第一组</button>
+                这里是运营的评分页面
             </div>
         )
     }

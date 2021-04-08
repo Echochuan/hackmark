@@ -43,7 +43,7 @@ render(){
         </p>
       </Header>
       <Content style={{ margin: '24px 16px 0' }}>
-        <div className="site-layout-background" style={{ padding: 24, minHeight: 600 }}>
+        <div className="site-layout-background" style={{ padding: 24, minHeight: 650 }}>
           <Route exact path='/' component={List}></Route>
           <Route path='/director' component={director}></Route>
           <Route path='/design' component={design}></Route>
