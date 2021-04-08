@@ -5,9 +5,10 @@ class index extends Component {
 
     Group_1 = () => {
         // console.log(this.props.history.location.pathname);
-        // const now = this.props.history.location.pathname;
-        // console.log(now);
-        this.props.history.push('group_1');
+        const now = this.props.history.location.pathname;
+        const url = `${now}/group_1`;
+        console.log(url);
+        this.props.history.push(url);
     }
 
     render() {
