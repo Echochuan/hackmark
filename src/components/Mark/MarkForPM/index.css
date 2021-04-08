@@ -1,0 +1,28 @@
+.boxForDi {
+    margin-top: 5%;
+}
+
+.markTip {
+    background: #dedcdc;
+    width: 15%;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 15px;
+    margin-left: 10%;
+}
+
+.markBox {
+    width: 20%;
+    min-width: 150px;
+    margin-left: 40%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.eachEnter {
+    margin-top: 5%;
+}
+
+.YesBtn {
+    margin-left: 45%;
+}
