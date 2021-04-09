@@ -6,25 +6,22 @@ import { Input } from 'antd';
 
 export default class List extends Component {
 
-state = { userid : [] }
+state = { userid : { name : "", position : "" ,group_1 : [], group_2 : [], group_3 : [], group_4 : [], group_5 : [], group_6 :[], group_7:[] } }
 
 entername = (event) => {
-    const { userid } = this.state;
-    const { target } = event;
-    console.log("输入成功");
-    const user = { name : target.value, position : "" ,group_1 : [], group_2 : [], group_3 : [], group_4 : [], group_5 : [] }
-    console.log(user);
-    console.log(userid);
-    this.setState({userid : user});
-    console.log(userid);
+    const namedata = event.target.value;
+    const data = Object.assign({},this.state.userid, {name:namedata});
+    console.log(data);
+    this.setState({ userid : data },() => {console.log(this.state.userid)});
 }
+
 handleChick = () => {
   console.log("恭喜你点击了！");
+  console.log(this.state.userid)
 }
 
 
   render() {
-
     return (
       <div className="list">
         <div className="nameEnter">
