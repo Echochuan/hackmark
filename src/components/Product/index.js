@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route } from 'react-router'
 
 import markforpm from '../Mark/MarkForPM/index'
+import lastmarkforpm from '../Mark/MarkForPM/lastPage'
 
 export default class index extends Component {
 
@@ -34,7 +35,7 @@ export default class index extends Component {
                 <Route path='/product/Group_2' component={markforpm} />
                 <Route path='/product/Group_3' component={markforpm} />
                 <Route path='/product/Group_4' component={markforpm} />
-                <Route path='/product/Group_5' component={markforpm} />
+                <Route path='/product/Group_5' component={lastmarkforpm} />
             </div>
         )
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route } from 'react-router'
 
 import markforfe from '../Mark/MarkForFE/index'
+import lastmarkforfe from '../Mark/MarkForFE/lastPage'
 
 export default class index extends Component {
     render() {
@@ -28,7 +29,7 @@ export default class index extends Component {
                 <Route path='/front/Group_2' component={markforfe} />
                 <Route path='/front/Group_3' component={markforfe} />
                 <Route path='/front/Group_4' component={markforfe} />
-                <Route path='/front/Group_5' component={markforfe} />
+                <Route path='/front/Group_5' component={lastmarkforfe} />
             </div>
         )
     }

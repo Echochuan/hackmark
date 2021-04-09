@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route } from 'react-router'
 
 import markforui from '../Mark/MarkForUI/index'
+import lastmarkforui from '../Mark/MarkForUI/lastPage'
 
 export default class index extends Component {
     render() {
@@ -28,7 +29,7 @@ export default class index extends Component {
                 <Route path='/design/Group_2' component={markforui} />
                 <Route path='/design/Group_3' component={markforui} />
                 <Route path='/design/Group_4' component={markforui} />
-                <Route path='/design/Group_5' component={markforui} />
+                <Route path='/design/Group_5' component={lastmarkforui} />
             </div>
         )
     }
