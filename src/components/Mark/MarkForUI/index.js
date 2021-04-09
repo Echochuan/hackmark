@@ -15,6 +15,7 @@ export default class index extends Component {
           content: '确定后无法修改，请多多检查',
           onOk() {
             console.log('Ok');
+            alert("请点击下一组按钮继续评分");
           },
           onCancel() {
             console.log('Cancel');
