@@ -16,19 +16,19 @@ export default class List extends Component {
           <p>请选择你要评分的职位:</p>
         </div>
         <div className="buttonGroups">
-          <a href='/director'>
-            <button href='/director' className="eachButton" >运营</button>
+          <a href='/director/group_1'>
+            <button className="eachButton" >运营</button>
           </a>
-          <a href='/product'>
+          <a href='/product/group_1'>
             <button className="eachButton" >产品</button>
           </a>
-          <a href='/design'>
+          <a href='/design/group_1'>
             <button className="eachButton" >设计</button>
           </a>
-          <a href='/front'>
+          <a href='/front/group_1'>
             <button className="eachButton" >前端</button>
           </a>
-          <a href='/back'>
+          <a href='/back/group_1'>
             <button className="eachButton" >后端</button>
           </a>
         </div>
