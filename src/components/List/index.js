@@ -11,13 +11,37 @@ state = { userid : { name : "", position : "" ,group_1 : [], group_2 : [], group
 entername = (event) => {
     const namedata = event.target.value;
     const data = Object.assign({},this.state.userid, {name:namedata});
-    console.log(data);
     this.setState({ userid : data },() => {console.log(this.state.userid)});
 }
 
-handleChick = () => {
+handleChickForDI = () => {
   console.log("恭喜你点击了！");
-  console.log(this.state.userid)
+  const data = Object.assign({},this.state.userid, {position:"director"});
+  this.setState({ userid : data },() => {console.log(this.state.userid)});
+}
+
+handleChickForPM = () => {
+  console.log("恭喜你点击了！");
+  const data = Object.assign({},this.state.userid, {position:"product"});
+  this.setState({ userid : data },() => {console.log(this.state.userid)});
+}
+
+handleChickForUI = () => {
+  console.log("恭喜你点击了！");
+  const data = Object.assign({},this.state.userid, {position:"design"});
+  this.setState({ userid : data },() => {console.log(this.state.userid)});
+}
+
+handleChickForFE = () => {
+  console.log("恭喜你点击了！");
+  const data = Object.assign({},this.state.userid, {position:"front"});
+  this.setState({ userid : data },() => {console.log(this.state.userid)});
+}
+
+handleChickForBE = () => {
+  console.log("恭喜你点击了！");
+  const data = Object.assign({},this.state.userid, {position:"back"});
+  this.setState({ userid : data },() => {console.log(this.state.userid)});
 }
 
 
@@ -32,19 +56,19 @@ handleChick = () => {
         </div>
         <div className="buttonGroups">
           <a href='/director/group_1'>
-            <button className="eachButton" onClick={ this.handleChick } >运营</button>
+            <button className="eachButton" onClick={ this.handleChickForDI } >运营</button>
           </a>
           <a href='/product/group_1'>
-            <button className="eachButton" >产品</button>
+            <button className="eachButton" onClick={ this.handleChickForPM } >产品</button>
           </a>
           <a href='/design/group_1'>
-            <button className="eachButton" >设计</button>
+            <button className="eachButton" onClick={ this.handleChickForUI } >设计</button>
           </a>
           <a href='/front/group_1'>
-            <button className="eachButton" >前端</button>
+            <button className="eachButton" onClick={ this.handleChickForFE } >前端</button>
           </a>
           <a href='/back/group_1'>
-            <button className="eachButton" >后端</button>
+            <button className="eachButton" onClick={ this.handleChickForBE } >后端</button>
           </a>
         </div>
       </div>
