@@ -4,24 +4,30 @@ import { Route } from 'react-router'
 import markforpm from '../Mark/MarkForPM/index'
 
 export default class index extends Component {
+
+    Group_1 = () => {
+        const btns = document.querySelectorAll(".eachButton");
+        btns.style.backgroundColor = "red";
+    }
+
     render() {
         return (
             <div>
                 <div>
                     <a href='/product/group_1'>
-                        <button className="eachButton" onClick = {this.Group_1}>第一组</button>
+                        <button className="eachButton" >第一组</button>
                     </a>
                     <a href='/product/group_2'>
-                        <button className="eachButton" onClick = {this.Group_2}>第二组</button>
+                        <button className="eachButton" >第二组</button>
                     </a>
                     <a href='/product/group_3'>
-                        <button className="eachButton" onClick = {this.Group_3}>第三组</button>
+                        <button className="eachButton" >第三组</button>
                     </a>
                     <a href='/product/group_4'>
-                        <button className="eachButton" onClick = {this.Group_4}>第四组</button>
+                        <button className="eachButton" >第四组</button>
                     </a>
                     <a href='/product/group_5'>
-                        <button className="eachButton" onClick = {this.Group_5}>第五组</button>
+                        <button className="eachButton" >第五组</button>
                     </a>
                 </div>
                 <Route path='/product/Group_1' component={markforpm} />

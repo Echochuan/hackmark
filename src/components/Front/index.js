@@ -9,19 +9,19 @@ export default class index extends Component {
             <div>
                 <div>
                     <a href='/front/group_1'>
-                        <button className="eachButton" onClick = {this.Group_1}>第一组</button>
+                        <button className="eachButton" >第一组</button>
                     </a>
                     <a href='/front/group_2'>
-                        <button className="eachButton" onClick = {this.Group_2}>第二组</button>
+                        <button className="eachButton" >第二组</button>
                     </a>
                     <a href='/front/group_3'>
-                        <button className="eachButton" onClick = {this.Group_3}>第三组</button>
+                        <button className="eachButton" >第三组</button>
                     </a>
                     <a href='/front/group_4'>
-                        <button className="eachButton" onClick = {this.Group_4}>第四组</button>
+                        <button className="eachButton" >第四组</button>
                     </a>
                     <a href='/front/group_5'>
-                        <button className="eachButton" onClick = {this.Group_5}>第五组</button>
+                        <button className="eachButton" >第五组</button>
                     </a>
                 </div>
                 <Route path='/front/Group_1' component={markforfe} />
