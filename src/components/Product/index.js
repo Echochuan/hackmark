@@ -6,11 +6,6 @@ import lastmarkforpm from '../Mark/MarkForPM/lastPage'
 
 export default class index extends Component {
 
-    Group_1 = () => {
-        const btns = document.querySelectorAll(".eachButton");
-        btns.style.backgroundColor = "red";
-    }
-
     render() {
         return (
             <div>
@@ -30,12 +25,20 @@ export default class index extends Component {
                     <a href='/product/group_5'>
                         <button className="eachButton" >第五组</button>
                     </a>
+                    <a href='/product/group_6'>
+                        <button className="eachButton" >第六组</button>
+                    </a>
+                    <a href='/product/group_7'>
+                        <button className="eachButton" >第七组</button>
+                    </a>
                 </div>
                 <Route path='/product/Group_1' component={markforpm} />
                 <Route path='/product/Group_2' component={markforpm} />
                 <Route path='/product/Group_3' component={markforpm} />
                 <Route path='/product/Group_4' component={markforpm} />
-                <Route path='/product/Group_5' component={lastmarkforpm} />
+                <Route path='/product/Group_5' component={markforpm} />
+                <Route path='/product/Group_6' component={markforpm} />
+                <Route path='/product/Group_7' component={lastmarkforpm} />
             </div>
         )
     }

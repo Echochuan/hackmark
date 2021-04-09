@@ -24,12 +24,20 @@ export default class index extends Component {
                     <a href='/design/group_5'>
                         <button className="eachButton" >第五组</button>
                     </a>
+                    <a href='/design/group_6'>
+                        <button className="eachButton" >第六组</button>
+                    </a>
+                    <a href='/design/group_7'>
+                        <button className="eachButton" >第七组</button>
+                    </a>
                 </div>
                 <Route path='/design/Group_1' component={markforui} />
                 <Route path='/design/Group_2' component={markforui} />
                 <Route path='/design/Group_3' component={markforui} />
                 <Route path='/design/Group_4' component={markforui} />
-                <Route path='/design/Group_5' component={lastmarkforui} />
+                <Route path='/design/Group_5' component={markforui} />
+                <Route path='/design/Group_6' component={markforui} />
+                <Route path='/design/Group_7' component={lastmarkforui} />
             </div>
         )
     }
