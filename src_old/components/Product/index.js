@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router'
+import routes from '../../router/router'
 
-import markforpm from '../Mark/MarkForPM/index'
-import lastmarkforpm from '../Mark/MarkForPM/lastPage'
+
 
 export default class index extends Component {
 
@@ -32,13 +31,13 @@ export default class index extends Component {
                         <button className="eachButton" >第七组</button>
                     </a>
                 </div>
-                <Route path='/product/Group_1' component={markforpm} />
+                {/* <Route path='/product/Group_1' component={markforpm} />
                 <Route path='/product/Group_2' component={markforpm} />
                 <Route path='/product/Group_3' component={markforpm} />
                 <Route path='/product/Group_4' component={markforpm} />
                 <Route path='/product/Group_5' component={markforpm} />
                 <Route path='/product/Group_6' component={markforpm} />
-                <Route path='/product/Group_7' component={lastmarkforpm} />
+                <Route path='/product/Group_7' component={lastmarkforpm} /> */}
             </div>
         )
     }

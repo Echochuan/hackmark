@@ -1,0 +1,17 @@
+@import '~antd/dist/antd.css';
+
+.loginBox {
+    display:flex;
+    width: 50%;
+    margin: 0px auto;
+    margin-top: 30vh;
+}
+
+p {
+    text-align:center;
+}
+
+.loginBox1 {
+    margin: 0px auto;
+}
+
