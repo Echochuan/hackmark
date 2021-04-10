@@ -23,12 +23,20 @@ export default class index extends Component {
         });
       }
 
+      entermark_1 = (event) => {
+        console.log(event.target.value);
+        const mark1 = event.target.value;
+        console.log(mark1);
+        this.props.history.push("/",{group_1:[mark1]})
+      }
+
     render() {
+
         return (
             <div className="boxForDi">
                 <div className="markTip">请对以下项目评分</div>
                 <div className="markBox">
-                    <Input className="eachEnter" addonBefore="Question" suffix="分"  defaultValue="" />
+                    <Input  onPressEnter={this.entermark_1} className="eachEnter" addonBefore="Question" suffix="分"  defaultValue="" />
                     <Input className="eachEnter" addonBefore="Question" suffix="分"  defaultValue="" />
                     <Input className="eachEnter" addonBefore="Question" suffix="分"  defaultValue="" />
                     <Input className="eachEnter" addonBefore="Question" suffix="分"  defaultValue="" />

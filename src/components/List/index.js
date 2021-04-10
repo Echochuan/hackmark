@@ -1,17 +1,35 @@
 import React, { Component } from "react";
 import "./index.css"
+import store from '../../store/store'
+import { enterName } from '../../store/action';
 
 import { Input } from 'antd';
 
 
 export default class List extends Component {
 
-state = { userid : { name : "", position : "" ,group_1 : [], group_2 : [], group_3 : [], group_4 : [], group_5 : [], group_6 :[], group_7:[] } }
+constructor(props){
+super(props);
+
+this.state = store.getState();
+console.log(this.state);
+this.handleStoreChange = this.handleStoreChange.bind(this);
+// 注册监听store，store变化后调用组件的handleStoreChange方法更新组件的state
+store.subscribe(this.handleStoreChange); 
+}
+
+handleStoreChange() {
+  this.setState(
+    store.getState()
+  )
+}
 
 entername = (event) => {
     const namedata = event.target.value;
+    const action = enterName();
     const data = Object.assign({},this.state.userid, {name:namedata});
     this.setState({ userid : data },() => {console.log(this.state.userid)});
+    store.dispath(action);
 }
 
 handleChickForDI = () => {
@@ -46,6 +64,7 @@ handleChickForBE = () => {
 
 
   render() {
+
     return (
       <div className="list">
         <div className="nameEnter">
@@ -73,5 +92,13 @@ handleChickForBE = () => {
         </div>
       </div>
     );
+  }
+
+  componentDidMount(){
+    const messages = this.props.location.state;
+    console.log(messages);
+    const data = Object.assign({},this.state.userid, {group_1:messages});
+    console.log(data);
+    this.setState({userid : data },() => {console.log(this.state.userid)});
   }
 }
