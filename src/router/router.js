@@ -1,15 +1,11 @@
-import React from 'react';
-import {Route} from 'react-router'
+import initPage from '../pages/init_page'
 
-
-class routes extends React.Component {
-    render(){
-        return(
-            <div>
-            <Route path='/home'></Route>
-        </div>
-        )
+const routers = [
+    {
+        path: '/#/init',
+        component: initPage,
+        exact: true,
     }
-}
+]
 
-export default routes;
+export default routers;

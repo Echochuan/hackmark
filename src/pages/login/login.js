@@ -1,6 +1,12 @@
 import React from "react";
+import { Route } from 'react-router'
 import './login.css'
+
 import { Form, Input, Button } from "antd";
+
+
+import createHashHistory from 'history/createHashHistory';
+const hashHistory = createHashHistory();
 
 class Login extends React.Component {
 
@@ -22,13 +28,15 @@ class Login extends React.Component {
       }
     };
 
-      const onFinish = values => {
+      const onFinish = (values) => {
         //把values传给后端判断是否正确 如果正确 跳转到下一个页面，如果不正确 则提示错误
         //也可以把username传过去，拿来password 判断password是不是相等
         const id={username:'1',password:'1'}
+        console.log(hashHistory)
         if(id.username === values.username && id.password === values.password ) {
           console.log("yes!");
-          //尚未解决的问题：函数式跳转
+          hashHistory.push('init')
+          //尚未解决的问题：函数式跳转 也就是在这个地方应该跳转到/mark页面
         }else{
           alert("信息错误");
         }
@@ -92,6 +100,8 @@ class Login extends React.Component {
           </Button>
         </Form.Item>
       </Form>
+      {/* <Route path='/' component= {} />
+      <Route path='/init'  component={ initPage } ></Route> */}
       </div>
       </div>
     );
