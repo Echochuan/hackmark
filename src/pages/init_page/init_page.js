@@ -1,13 +1,28 @@
 import React, { Component } from "react";
+import { Route } from 'react-router';
 import { Layout, Menu } from "antd";
+
+import director from '../mark/markForDi/index'
+
 import {
   UserOutlined
 } from "@ant-design/icons";
 
+import createHashHistory from 'history/createHashHistory';
+const hashHistory = createHashHistory();
+
 const { Header, Content, Footer, Sider } = Layout;
 const {SubMenu} = Menu;
 
+
+
 export default class init_page extends Component {
+
+  Click_1 = () => {
+    console.log("hello")
+    hashHistory.push('/init/director')
+  }
+
   render() {
     return (
       <div>
@@ -25,7 +40,7 @@ export default class init_page extends Component {
             <div className="logo" />
             <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
             <SubMenu key="di" icon={<UserOutlined />} title="运营组">
-              <Menu.Item key="1" >
+              <Menu.Item key="1" onClick={this.Click_1}>
                 第一组
               </Menu.Item>
               <Menu.Item key="2" >
@@ -151,7 +166,7 @@ export default class init_page extends Component {
                 className="site-layout-background"
                 style={{ padding: 24, minHeight: 360 }}
               >
-                content
+                <Route path='/init/director' component={director} />
               </div>
             </Content>
             <Footer style={{ textAlign: "center" }}>
