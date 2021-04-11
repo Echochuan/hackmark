@@ -1,5 +1,4 @@
 import React from "react";
-import { Route } from 'react-router'
 import './login.css'
 
 import { Form, Input, Button } from "antd";
@@ -99,8 +98,6 @@ class Login extends React.Component {
           </Button>
         </Form.Item>
       </Form>
-      {/* <Route path='/' component= {} />
-      <Route path='/init'  component={ initPage } ></Route> */}
       </div>
       </div>
     );

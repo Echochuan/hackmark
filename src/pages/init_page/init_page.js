@@ -18,12 +18,14 @@ const {SubMenu} = Menu;
 
 export default class init_page extends Component {
 
-  Click_1 = () => {
-    console.log("hello")
-    hashHistory.push('/init/director')
+  Click = (e) => {
+    const position = e.keyPath[1];
+    const group = e.keyPath[0]
+    hashHistory.push('/init/'+ position + '/' + group)
   }
 
   render() {
+    console.log("hi,init")
     return (
       <div>
         <Layout>
@@ -38,9 +40,9 @@ export default class init_page extends Component {
             }}
           >
             <div className="logo" />
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
-            <SubMenu key="di" icon={<UserOutlined />} title="运营组">
-              <Menu.Item key="1" onClick={this.Click_1}>
+            <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}  onClick={this.Click}>
+            <SubMenu key="director" icon={<UserOutlined />} title="运营组">
+              <Menu.Item key="1">
                 第一组
               </Menu.Item>
               <Menu.Item key="2" >
@@ -62,7 +64,7 @@ export default class init_page extends Component {
                 第七组
               </Menu.Item>
             </SubMenu>
-            <SubMenu key="pm" icon={<UserOutlined />} title="产品组">
+            <SubMenu key="product" icon={<UserOutlined />} title="产品组">
               <Menu.Item key="8" >
                 第一组
               </Menu.Item>
@@ -85,7 +87,7 @@ export default class init_page extends Component {
                 第七组
               </Menu.Item>
             </SubMenu>
-            <SubMenu key="ui" icon={<UserOutlined />} title="设计组">
+            <SubMenu key="design" icon={<UserOutlined />} title="设计组">
               <Menu.Item key="15" >
                 第一组
               </Menu.Item>
@@ -108,7 +110,7 @@ export default class init_page extends Component {
                 第七组
               </Menu.Item>
             </SubMenu>
-            <SubMenu key="fe" icon={<UserOutlined />} title="前端组">
+            <SubMenu key="front" icon={<UserOutlined />} title="前端组">
               <Menu.Item key="22" >
                 第一组
               </Menu.Item>
@@ -131,7 +133,7 @@ export default class init_page extends Component {
                 第七组
               </Menu.Item>
             </SubMenu>
-            <SubMenu key="be" icon={<UserOutlined />} title="后端组">
+            <SubMenu key="back" icon={<UserOutlined />} title="后端组">
               <Menu.Item key="29" >
                 第一组
               </Menu.Item>
