@@ -16,35 +16,11 @@ export default class init_page extends Component {
   updata = value => {
     console.log("updata start");
     console.log(value);
-    if (value == 8 && value == 15) {
-      value = 1;
-      return value;
+    value = value % 7;
+    if (value == 0) {
+      value = 7
     }
-    if (value == 9 && value == 16) {
-      value = 2;
-      return value;
-    }
-    if (value == 10 && value == 17) {
-      value = 3;
-      return value;
-    }
-    if (value == 11 && value == 18) {
-      value = 4;
-      return value;
-    }
-    if (value == 12 && value == 19) {
-      value = 5;
-      return value;
-    }
-    if (value == 13 && value == 20) {
-      value = 6;
-      return value;
-    }
-    if (value == 14 && value == 21) {
-      value = 7;
-      return value;
-    }
-    else return value;
+    return value
   };
 
   Click = e => {
