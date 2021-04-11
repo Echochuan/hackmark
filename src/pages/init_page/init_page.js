@@ -17,7 +17,7 @@ export default class init_page extends Component {
     console.log("updata start");
     console.log(value);
     value = value % 7;
-    if (value == 0) {
+    if (value === 0) {
       value = 7
     }
     return value
