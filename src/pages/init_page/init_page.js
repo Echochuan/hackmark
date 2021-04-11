@@ -18,9 +18,9 @@ export default class init_page extends Component {
     console.log(value);
     value = value % 7;
     if (value === 0) {
-      value = 7
+      value = 7;
     }
-    return value
+    return value;
   };
 
   Click = e => {
@@ -110,7 +110,14 @@ export default class init_page extends Component {
                 className="site-layout-background"
                 style={{ padding: 24, minHeight: 360 }}
               >
-                <Route path="/init/director" component={director} />
+                {/* 我记得好像可以写在router.js里，然后在这里逐次遍历，但不记得具体怎么写了，先这样用着 */}
+                <Route path="/init/director/1" component={director} />
+                <Route path="/init/director/2" component={director} />
+                <Route path="/init/director/3" component={director} />
+                <Route path="/init/director/4" component={director} />
+                <Route path="/init/director/5" component={director} />
+                <Route path="/init/director/6" component={director} />
+                <Route path="/init/director/7" component={director} />
               </div>
             </Content>
             <Footer style={{ textAlign: "center" }}>
