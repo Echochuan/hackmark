@@ -53,7 +53,7 @@ export default class init_page extends Component {
             <Menu
               theme="dark"
               mode="inline"
-              defaultSelectedKeys={["4"]}
+              defaultSelectedKeys={["1"]}
               onClick={this.Click}
             >
               <SubMenu key="director" icon={<UserOutlined />} title="运营组">

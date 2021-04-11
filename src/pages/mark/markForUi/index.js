@@ -1,13 +1,24 @@
 import React from "react";
 import "./index.css";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, notification } from "antd";
 
 const Demo = () => {
 
+  const openNotification = () => {
+    notification.open({
+      message: '评分成功',
+      description:
+        '你已完成该组的评分，请在左侧选择为其他组评分。',
+      onClick: () => {
+        console.log('Notification Clicked!');
+      },
+    });
+  };
+
     const onFinish = values => {
       console.log(values);
+      openNotification();
     };
-
     const buttonItemLayout = {
       wrapperCol: {
         span: 14,
