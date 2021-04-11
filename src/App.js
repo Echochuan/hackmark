@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router";
 
-import initPage from './pages/init_page'
+import initPage from './pages/init_page/init_page'
 import login from './pages/login/login'
 
 export default class App extends Component {

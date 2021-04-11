@@ -29,14 +29,13 @@ class Login extends React.Component {
     };
 
       const onFinish = (values) => {
-        //把values传给后端判断是否正确 如果正确 跳转到下一个页面，如果不正确 则提示错误
+        //把values传给后端判断是否正确 如果正确 跳转到下一个页面并把username存储进store，如果不正确 则提示错误
         //也可以把username传过去，拿来password 判断password是不是相等
         const id={username:'1',password:'1'}
         console.log(hashHistory)
         if(id.username === values.username && id.password === values.password ) {
           console.log("yes!");
           hashHistory.push('init')
-          //尚未解决的问题：函数式跳转 也就是在这个地方应该跳转到/mark页面
         }else{
           alert("信息错误");
         }
