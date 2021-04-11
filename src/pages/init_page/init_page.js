@@ -3,6 +3,10 @@ import { Route } from "react-router";
 import { Layout, Menu } from "antd";
 
 import director from "../mark/markForDi/index";
+import product from "../mark/markForPm/index";
+import design from "../mark/markForUi/index";
+import front from "../mark/markForFe/index";
+import back from "../mark/markForBe/index";
 
 import { UserOutlined } from "@ant-design/icons";
 
@@ -14,8 +18,8 @@ const { SubMenu } = Menu;
 
 export default class init_page extends Component {
   updata = value => {
-    console.log("updata start");
-    console.log(value);
+    // console.log("updata start");
+    // console.log(value);
     value = value % 7;
     if (value === 0) {
       value = 7;
@@ -27,12 +31,11 @@ export default class init_page extends Component {
     const position = e.keyPath[1];
     const group = e.keyPath[0];
     const groupid = this.updata(group);
-    console.log(groupid);
+    // console.log(groupid);
     hashHistory.push("/init/" + position + "/" + groupid);
   };
 
   render() {
-    console.log("hi,init");
     return (
       <div>
         <Layout>
@@ -110,14 +113,44 @@ export default class init_page extends Component {
                 className="site-layout-background"
                 style={{ padding: 24, minHeight: 360 }}
               >
-                {/* 我记得好像可以写在router.js里，然后在这里逐次遍历，但不记得具体怎么写了，先这样用着 */}
-                <Route path="/init/director/1" component={director} />
-                <Route path="/init/director/2" component={director} />
-                <Route path="/init/director/3" component={director} />
-                <Route path="/init/director/4" component={director} />
-                <Route path="/init/director/5" component={director} />
-                <Route path="/init/director/6" component={director} />
-                <Route path="/init/director/7" component={director} />
+                {/* 我记得好像可以写在router.js里，然后在这里逐次遍历，但不记得具体怎么写了，先这样用着。你妈的 看起来真丑啊*/}
+                <div className="route">
+                  <Route path="/init/director/1" component={director} />
+                  <Route path="/init/director/2" component={director} />
+                  <Route path="/init/director/3" component={director} />
+                  <Route path="/init/director/4" component={director} />
+                  <Route path="/init/director/5" component={director} />
+                  <Route path="/init/director/6" component={director} />
+                  <Route path="/init/director/7" component={director} />
+                  <Route path="/init/product/1" component={product} />
+                  <Route path="/init/product/2" component={product} />
+                  <Route path="/init/product/3" component={product} />
+                  <Route path="/init/product/4" component={product} />
+                  <Route path="/init/product/5" component={product} />
+                  <Route path="/init/product/6" component={product} />
+                  <Route path="/init/product/7" component={product} />
+                  <Route path="/init/design/1" component={design} />
+                  <Route path="/init/design/2" component={design} />
+                  <Route path="/init/design/3" component={design} />
+                  <Route path="/init/design/4" component={design} />
+                  <Route path="/init/design/5" component={design} />
+                  <Route path="/init/design/6" component={design} />
+                  <Route path="/init/design/7" component={design} />
+                  <Route path="/init/front/1" component={front} />
+                  <Route path="/init/front/2" component={front} />
+                  <Route path="/init/front/3" component={front} />
+                  <Route path="/init/front/4" component={front} />
+                  <Route path="/init/front/5" component={front} />
+                  <Route path="/init/front/6" component={front} />
+                  <Route path="/init/front/7" component={front} />
+                  <Route path="/init/back/1" component={back} />
+                  <Route path="/init/back/2" component={back} />
+                  <Route path="/init/back/3" component={back} />
+                  <Route path="/init/back/4" component={back} />
+                  <Route path="/init/back/5" component={back} />
+                  <Route path="/init/back/6" component={back} />
+                  <Route path="/init/back/7" component={back} />
+                </div>
               </div>
             </Content>
             <Footer style={{ textAlign: "center" }}>
