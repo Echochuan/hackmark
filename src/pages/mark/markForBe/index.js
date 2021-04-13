@@ -68,50 +68,64 @@ const Demo = props => {
           //   from={from}
         >
           <Form.Item
-            label="Question"
+            label="Golang高级特性"
             name="Question"
             rules={[{ required: true }]}
           >
-            <Input placeholder="input placeholder" />
+            <Input placeholder="10分" />
           </Form.Item>
           <Form.Item
-            label="Question"
+            label="功能复杂度"
             name="Question2"
             rules={[{ required: true }]}
           >
-            <Input placeholder="input placeholder" />
+            <Input placeholder="10分" />
           </Form.Item>
           <Form.Item
-            label="Question"
+            label="项目完成度"
             name="Question3"
             rules={[{ required: true }]}
           >
-            <Input placeholder="input placeholder" />
+            <Input placeholder="20分" />
           </Form.Item>
           <Form.Item
-            label="Question"
+            label="代码规范"
             name="Question4"
             rules={[{ required: true }]}
           >
-            <Input placeholder="input placeholder" />
+            <Input placeholder="10分" />
           </Form.Item>
           <Form.Item
-            label="Question"
+            label="挑战度"
             name="Question5"
             rules={[{ required: true }]}
           >
-            <Input placeholder="input placeholder" />
+            <Input placeholder="10分" />
           </Form.Item>
           <Form.Item
-            label="Question"
+            label="数据库"
             name="Question6"
             rules={[{ required: true }]}
           >
-            <Input placeholder="input placeholder" />
+            <Input placeholder="20分" />
+          </Form.Item>
+          <Form.Item
+            label="测试"
+            name="Question7"
+            rules={[{ required: true }]}
+          >
+            <Input placeholder="10分" />
+          </Form.Item>
+          <Form.Item
+            label="架构"
+            name="Question8"
+            rules={[{ required: true }]}
+          >
+            <Input placeholder="10分" />
           </Form.Item>
           <Form.Item {...buttonItemLayout}>
             <Button type="primary" htmlType="submit">
-              Submit
+              提交
             </Button>
           </Form.Item>
         </Form>

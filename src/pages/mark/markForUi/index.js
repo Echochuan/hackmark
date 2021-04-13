@@ -67,26 +67,23 @@ const Demo = (props) => {
               className="markform"
               onFinish={onFinish}
             >
-              <Form.Item label="Question" name="Question"  rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="icon/logo" name="Question"  rules={[{ required: true }]}>
+                <Input placeholder="25分" />
               </Form.Item>
-              <Form.Item label="Question" name="Question2" rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="设计规范" name="Question2" rules={[{ required: true }]}>
+                <Input placeholder="20分" />
               </Form.Item>
-              <Form.Item label="Question" name="Question3" rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="设计思路" name="Question3" rules={[{ required: true }]}>
+                <Input placeholder="5分" />
               </Form.Item>
-              <Form.Item label="Question" name="Question4" rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="美观" name="Question4" rules={[{ required: true }]}>
+                <Input placeholder="40分" />
               </Form.Item>
-              <Form.Item label="Question" name="Question5" rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
-              </Form.Item>
-              <Form.Item label="Question" name="Question6" rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="产品指数" name="Question5" rules={[{ required: true }]}>
+                <Input placeholder="10分" />
               </Form.Item>
               <Form.Item {...buttonItemLayout}>
-                <Button type="primary" htmlType="submit">Submit</Button>
+                <Button type="primary" htmlType="submit">提交</Button>
               </Form.Item>
             </Form>
           </div>

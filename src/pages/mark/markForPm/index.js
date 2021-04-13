@@ -69,26 +69,32 @@ const Demo = (props) => {
               onFinish={onFinish}
             //   from={from}
             >
-              <Form.Item label="Question" name="Question"  rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="完成度" name="Question"  rules={[{ required: true }]}>
+                <Input placeholder="10分" />
               </Form.Item>
-              <Form.Item label="Question" name="Question2" rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="交互体验" name="Question2" rules={[{ required: true }]}>
+                <Input placeholder="15分" />
               </Form.Item>
-              <Form.Item label="Question" name="Question3" rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="调研文档" name="Question3" rules={[{ required: true }]}>
+                <Input placeholder="10分" />
               </Form.Item>
-              <Form.Item label="Question" name="Question4" rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="需求分析" name="Question4" rules={[{ required: true }]}>
+                <Input placeholder="15分" />
               </Form.Item>
-              <Form.Item label="Question" name="Question5" rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="产品创意" name="Question5" rules={[{ required: true }]}>
+                <Input placeholder="15分" />
               </Form.Item>
-              <Form.Item label="Question" name="Question6" rules={[{ required: true }]}>
-                <Input placeholder="input placeholder" />
+              <Form.Item label="逻辑缜密" name="Question6" rules={[{ required: true }]}>
+                <Input placeholder="15分" />
+              </Form.Item>
+              <Form.Item label="迭代计划" name="Question7" rules={[{ required: true }]}>
+                <Input placeholder="10分" />
+              </Form.Item>
+              <Form.Item label="反思总结" name="Question8" rules={[{ required: true }]}>
+                <Input placeholder="10分" />
               </Form.Item>
               <Form.Item {...buttonItemLayout}>
-                <Button type="primary" htmlType="submit">Submit</Button>
+                <Button type="primary" htmlType="submit">提交</Button>
               </Form.Item>
             </Form>
           </div>
