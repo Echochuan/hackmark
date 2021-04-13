@@ -94,7 +94,7 @@ class Login extends React.Component {
 
         <Form.Item {...tailLayout}>
           <Button type="primary" htmlType="submit" onClick={ login }>
-            Submit
+            登陆
           </Button>
         </Form.Item>
       </Form>
