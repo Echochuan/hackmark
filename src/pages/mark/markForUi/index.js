@@ -2,16 +2,14 @@ import React from "react";
 import "./index.css";
 import { Form, Input, Button, notification } from "antd";
 
-const Demo = (props) => {
-
+const Demo = props => {
   const openNotification = () => {
     notification.open({
-      message: '评分成功',
-      description:
-        '你已完成该组的评分，请在左侧选择为其他组评分。',
+      message: "评分成功",
+      description: "你已完成该组的评分，请在左侧选择为其他组评分。",
       onClick: () => {
-        console.log('Notification Clicked!');
-      },
+        console.log("Notification Clicked!");
+      }
     });
   };
   const toNumberValue = obj => {
@@ -53,42 +51,81 @@ const Demo = (props) => {
     openNotification();
   };
 
-    const buttonItemLayout = {
-      wrapperCol: {
-        span: 14,
-        offset: 4
-      }
-    };
-
-    return (
-        <div>
-          <div className="markbox">
-            <Form
-              className="markform"
-              onFinish={onFinish}
-            >
-              <Form.Item label="icon/logo" name="Question"  rules={[{ required: true,message: '此项为必填项' }]}>
-                <Input placeholder="25分" />
-              </Form.Item>
-              <Form.Item label="设计规范" name="Question2" rules={[{ required: true,message: '此项为必填项' }]}>
-                <Input placeholder="20分" />
-              </Form.Item>
-              <Form.Item label="设计思路" name="Question3" rules={[{ required: true,message: '此项为必填项' }]}>
-                <Input placeholder="5分" />
-              </Form.Item>
-              <Form.Item label="美观" name="Question4" rules={[{ required: true,message: '此项为必填项' }]}>
-                <Input placeholder="40分" />
-              </Form.Item>
-              <Form.Item label="产品指数" name="Question5" rules={[{ required: true,message: '此项为必填项' }]}>
-                <Input placeholder="10分" />
-              </Form.Item>
-              <Form.Item {...buttonItemLayout}>
-                <Button type="primary" htmlType="submit">提交</Button>
-              </Form.Item>
-            </Form>
-          </div>
-        </div>
-      );
+  const buttonItemLayout = {
+    wrapperCol: {
+      span: 14,
+      offset: 4
     }
+  };
 
-    export default Demo;
+  return (
+    <div>
+      <div className="markbox">
+        <Form className="markform" onFinish={onFinish}>
+          <Form.Item
+            label="icon/logo"
+            name="Question"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^2[0-5]$/, "g"), message: "此项最高分为25分" }
+            ]}
+          >
+            <Input placeholder="25分" />
+          </Form.Item>
+          <Form.Item
+            label="设计规范"
+            name="Question2"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^20$/, "g"), message: "此项最高分为20分" }
+            ]}
+          >
+            <Input placeholder="20分" />
+          </Form.Item>
+          <Form.Item
+            label="设计思路"
+            name="Question3"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-5]$/, "g"), message: "此项最高分为5分" }
+            ]}
+          >
+            <Input placeholder="5分" />
+          </Form.Item>
+          <Form.Item
+            label="美观"
+            name="Question4"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^[0-3]$|^40$/, "g"), message: "此项最高分为40分" }
+            ]}
+          >
+            <Input placeholder="40分" />
+          </Form.Item>
+          <Form.Item
+            label="产品指数"
+            name="Question5"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+            ]}
+          >
+            <Input placeholder="10分" />
+          </Form.Item>
+          <Form.Item {...buttonItemLayout}>
+            <Button type="primary" htmlType="submit">
+              提交
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
+    </div>
+  );
+};
+
+export default Demo;

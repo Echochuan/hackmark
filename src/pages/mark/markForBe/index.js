@@ -70,56 +70,88 @@ const Demo = props => {
           <Form.Item
             label="Golang高级特性"
             name="Question"
-            rules={[{ required: true, message: '此项为必填项'},{pattern: new RegExp(/^[1-9]\d*$/, "g"), message: '请输入数字' }]}
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+            ]}
           >
             <Input placeholder="10分" />
           </Form.Item>
           <Form.Item
             label="功能复杂度"
             name="Question2"
-            rules={[{ required: true, message: '此项为必填项'},{pattern: new RegExp(/^[1-9]\d*$/, "g"), message: '请输入数字' }]}
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+            ]}
           >
             <Input placeholder="10分" />
           </Form.Item>
           <Form.Item
             label="项目完成度"
             name="Question3"
-            rules={[{ required: true, message: '此项为必填项'},{pattern: new RegExp(/^[1-9]\d*$/, "g"), message: '请输入数字' }]}
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^20$/, "g"), message: "此项最高分为20分" }
+            ]}
           >
             <Input placeholder="20分" />
           </Form.Item>
           <Form.Item
             label="代码规范"
             name="Question4"
-            rules={[{ required: true, message: '此项为必填项'},{pattern: new RegExp(/^[1-9]\d*$/, "g"), message: '请输入数字' }]}
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+            ]}
           >
             <Input placeholder="10分" />
           </Form.Item>
           <Form.Item
             label="挑战度"
             name="Question5"
-            rules={[{ required: true, message: '此项为必填项'},{pattern: new RegExp(/^[1-9]\d*$/, "g"), message: '请输入数字' }]}
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+            ]}
           >
             <Input placeholder="10分" />
           </Form.Item>
           <Form.Item
             label="数据库"
             name="Question6"
-            rules={[{ required: true, message: '此项为必填项'},{pattern: new RegExp(/^[1-9]\d*$/, "g"), message: '请输入数字' }]}
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^20$/, "g"), message: "此项最高分为20分" }
+            ]}
           >
             <Input placeholder="20分" />
           </Form.Item>
           <Form.Item
             label="测试"
             name="Question7"
-            rules={[{ required: true, message: '此项为必填项'},{pattern: new RegExp(/^[1-9]\d*$/, "g"), message: '请输入数字' }]}
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+            ]}
           >
             <Input placeholder="10分" />
           </Form.Item>
           <Form.Item
             label="架构"
             name="Question8"
-            rules={[{ required: true, message: '此项为必填项'},{pattern: new RegExp(/^[1-9]\d*$/, "g"), message: '请输入数字' }]}
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+            ]}
           >
             <Input placeholder="10分" />
           </Form.Item>

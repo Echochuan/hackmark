@@ -72,7 +72,8 @@ const Demo = props => {
             name="Question"
             rules={[
               { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
             <Input placeholder="10分" />
@@ -82,7 +83,8 @@ const Demo = props => {
             name="Question2"
             rules={[
               { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
             <Input placeholder="10分" />
@@ -92,7 +94,8 @@ const Demo = props => {
             name="Question3"
             rules={[
               { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^20$/, "g"), message: "此项最高分为20分" }
             ]}
           >
             <Input placeholder="20分" />
@@ -102,7 +105,8 @@ const Demo = props => {
             name="Question4"
             rules={[
               { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
             ]}
           >
             <Input placeholder="15分" />
@@ -112,7 +116,8 @@ const Demo = props => {
             name="Question5"
             rules={[
               { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
             ]}
           >
             <Input placeholder="15分" />
@@ -122,7 +127,8 @@ const Demo = props => {
             name="Question6"
             rules={[
               { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^20$/, "g"), message: "此项最高分为20分" }
             ]}
           >
             <Input placeholder="20分" />
@@ -132,7 +138,8 @@ const Demo = props => {
             name="Question7"
             rules={[
               { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
             <Input placeholder="10分" />
