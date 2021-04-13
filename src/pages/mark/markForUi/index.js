@@ -67,19 +67,19 @@ const Demo = (props) => {
               className="markform"
               onFinish={onFinish}
             >
-              <Form.Item label="icon/logo" name="Question"  rules={[{ required: true }]}>
+              <Form.Item label="icon/logo" name="Question"  rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="25分" />
               </Form.Item>
-              <Form.Item label="设计规范" name="Question2" rules={[{ required: true }]}>
+              <Form.Item label="设计规范" name="Question2" rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="20分" />
               </Form.Item>
-              <Form.Item label="设计思路" name="Question3" rules={[{ required: true }]}>
+              <Form.Item label="设计思路" name="Question3" rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="5分" />
               </Form.Item>
-              <Form.Item label="美观" name="Question4" rules={[{ required: true }]}>
+              <Form.Item label="美观" name="Question4" rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="40分" />
               </Form.Item>
-              <Form.Item label="产品指数" name="Question5" rules={[{ required: true }]}>
+              <Form.Item label="产品指数" name="Question5" rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="10分" />
               </Form.Item>
               <Form.Item {...buttonItemLayout}>

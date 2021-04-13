@@ -69,28 +69,28 @@ const Demo = (props) => {
               onFinish={onFinish}
             //   from={from}
             >
-              <Form.Item label="产品slogan" name="Question"  rules={[{ required: true }]}>
+              <Form.Item label="产品slogan" name="Question"  rules={[{ required: true, message: '此项为必填项' }]}>
                 <Input placeholder="10分" />
               </Form.Item>
-              <Form.Item label="线上推广文案" name="Question2" rules={[{ required: true }]}>
+              <Form.Item label="线上推广文案" name="Question2" rules={[{ required: true, message: '此项为必填项' }]}>
                 <Input placeholder="15分" />
               </Form.Item>
-              <Form.Item label="活动策划idea" name="Question3" rules={[{ required: true }]}>
+              <Form.Item label="活动策划idea" name="Question3" rules={[{ required: true, message: '此项为必填项' }]}>
                 <Input placeholder="15分" />
               </Form.Item>
-              <Form.Item label="活动策划完整度" name="Question4" rules={[{ required: true }]}>
+              <Form.Item label="活动策划完整度" name="Question4" rules={[{ required: true, message: '此项为必填项' }]}>
                 <Input placeholder="15分" />
               </Form.Item>
-              <Form.Item label="后期运营规划" name="Question5" rules={[{ required: true }]}>
+              <Form.Item label="后期运营规划" name="Question5" rules={[{ required: true, message: '此项为必填项' }]}>
                 <Input placeholder="15分" />
               </Form.Item>
-              <Form.Item label="产品交互方案" name="Question6" rules={[{ required: true }]}>
+              <Form.Item label="产品交互方案" name="Question6" rules={[{ required: true, message: '此项为必填项' }]}>
                 <Input placeholder="10分" />
               </Form.Item>
-              <Form.Item label="调研文档推广" name="Question7" rules={[{ required: true }]}>
+              <Form.Item label="调研文档推广" name="Question7" rules={[{ required: true, message: '此项为必填项' }]}>
                 <Input placeholder="10分" />
               </Form.Item>
-              <Form.Item label="产品名称" name="Question8" rules={[{ required: true }]}>
+              <Form.Item label="产品名称" name="Question8" rules={[{ required: true, message: '此项为必填项' }]}>
                 <Input placeholder="10分" />
               </Form.Item>
               <Form.Item {...buttonItemLayout}>

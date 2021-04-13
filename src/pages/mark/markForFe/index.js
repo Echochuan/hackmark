@@ -69,25 +69,25 @@ const Demo = (props) => {
               onFinish={onFinish}
             //   from={from}
             >
-              <Form.Item label="界面和标注稿的贴合度" name="Question"  rules={[{ required: true }]}>
+              <Form.Item label="界面和标注稿的贴合度" name="Question"  rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="10分" />
               </Form.Item>
-              <Form.Item label="响应式布局" name="Question2" rules={[{ required: true }]}>
+              <Form.Item label="响应式布局" name="Question2" rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="10分" />
               </Form.Item>
-              <Form.Item label="代码规范" name="Question3" rules={[{ required: true }]}>
+              <Form.Item label="代码规范" name="Question3" rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="20分" />
               </Form.Item>
-              <Form.Item label="框架使用" name="Question4" rules={[{ required: true }]}>
+              <Form.Item label="框架使用" name="Question4" rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="15分" />
               </Form.Item>
-              <Form.Item label="css技巧" name="Question5" rules={[{ required: true }]}>
+              <Form.Item label="css技巧" name="Question5" rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="15分" />
               </Form.Item>
-              <Form.Item label="完成度" name="Question6" rules={[{ required: true }]}>
+              <Form.Item label="完成度" name="Question6" rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="20分" />
               </Form.Item>
-              <Form.Item label="ajax" name="Question7" rules={[{ required: true }]}>
+              <Form.Item label="ajax" name="Question7" rules={[{ required: true,message: '此项为必填项' }]}>
                 <Input placeholder="10分" />
               </Form.Item>
               <Form.Item {...buttonItemLayout}>
