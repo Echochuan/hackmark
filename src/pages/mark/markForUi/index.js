@@ -71,7 +71,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^2[0-5]$/, "g"), message: "此项最高分为25分" }
             ]}
           >
-            <Input placeholder="25分" />
+            <Input placeholder="25分" type= 'number' />
           </Form.Item>
           <Form.Item
             label="设计规范"
@@ -82,7 +82,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^20$/, "g"), message: "此项最高分为20分" }
             ]}
           >
-            <Input placeholder="20分" />
+            <Input placeholder="20分" type= 'number' />
           </Form.Item>
           <Form.Item
             label="设计思路"
@@ -93,7 +93,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-5]$/, "g"), message: "此项最高分为5分" }
             ]}
           >
-            <Input placeholder="5分" />
+            <Input placeholder="5分" type= 'number' />
           </Form.Item>
           <Form.Item
             label="美观"
@@ -104,7 +104,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^[0-3]$|^40$/, "g"), message: "此项最高分为40分" }
             ]}
           >
-            <Input placeholder="40分" />
+            <Input placeholder="40分" type= 'number' />
           </Form.Item>
           <Form.Item
             label="产品指数"
@@ -115,7 +115,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="10分" />
+            <Input placeholder="10分" type= 'number' />
           </Form.Item>
           <Form.Item {...buttonItemLayout}>
             <Button type="primary" htmlType="submit">

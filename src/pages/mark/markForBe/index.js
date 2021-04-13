@@ -76,7 +76,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="10分" />
+            <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item
             label="功能复杂度"
@@ -87,7 +87,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="10分" />
+            <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item
             label="项目完成度"
@@ -98,7 +98,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^20$/, "g"), message: "此项最高分为20分" }
             ]}
           >
-            <Input placeholder="20分" />
+            <Input placeholder="20分" type='number'/>
           </Form.Item>
           <Form.Item
             label="代码规范"
@@ -109,7 +109,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="10分" />
+            <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item
             label="挑战度"
@@ -120,7 +120,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="10分" />
+            <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item
             label="数据库"
@@ -131,7 +131,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^20$/, "g"), message: "此项最高分为20分" }
             ]}
           >
-            <Input placeholder="20分" />
+            <Input placeholder="20分" type='number'/>
           </Form.Item>
           <Form.Item
             label="测试"
@@ -142,7 +142,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="10分" />
+            <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item
             label="架构"
@@ -153,7 +153,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="10分" />
+            <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item {...buttonItemLayout}>
             <Button type="primary" htmlType="submit">

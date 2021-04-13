@@ -76,7 +76,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="10分" />
+            <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item
             label="响应式布局"
@@ -87,7 +87,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="10分" />
+            <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item
             label="代码规范"
@@ -98,7 +98,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^20$/, "g"), message: "此项最高分为20分" }
             ]}
           >
-            <Input placeholder="20分" />
+            <Input placeholder="20分" type='number'/>
           </Form.Item>
           <Form.Item
             label="框架使用"
@@ -109,7 +109,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
             ]}
           >
-            <Input placeholder="15分" />
+            <Input placeholder="15分" type='number'/>
           </Form.Item>
           <Form.Item
             label="css技巧"
@@ -120,7 +120,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
             ]}
           >
-            <Input placeholder="15分" />
+            <Input placeholder="15分" type='number'/>
           </Form.Item>
           <Form.Item
             label="完成度"
@@ -131,7 +131,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^1[0-9]$|^20$/, "g"), message: "此项最高分为20分" }
             ]}
           >
-            <Input placeholder="20分" />
+            <Input placeholder="20分" type='number'/>
           </Form.Item>
           <Form.Item
             label="ajax"
@@ -142,7 +142,7 @@ const Demo = props => {
               { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="10分" />
+            <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item {...buttonItemLayout}>
             <Button type="primary" htmlType="submit">
