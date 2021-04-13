@@ -2,104 +2,160 @@ import React from "react";
 import "./index.css";
 import { Form, Input, Button, notification } from "antd";
 
-const Demo = (props) => {
-
-    const openNotification = () => {
-        notification.open({
-          message: '评分成功',
-          description:
-            '你已完成该组的评分，请在左侧选择为其他组评分。',
-          onClick: () => {
-            console.log('Notification Clicked!');
-          },
-        });
-      };
-    
-      const toNumberValue = obj => {
-        if (obj instanceof Array) {
-          var arr = [];
-          for (var i = 0; i < obj.length; i++) {
-            arr[i] = Number(obj[i]);
-          }
-          return arr;
-        } else if (typeof obj == "object") {
-          for (var p in obj) {
-            obj[p] = Number(obj[p]);
-          }
-        } else if (typeof obj == "string") {
-          obj = Number(obj);
-        }
-        return obj;
-      };
-    
-      const onFinish = values => {
-        const oldpath = props.location.pathname;
-        const newpathArr = oldpath.split("/");
-        const position = newpathArr[2];
-        const groupIndex = newpathArr[3];
-        const newValues = toNumberValue(values);
-        // console.log(position);
-        // console.log(groupIndex);
-        // console.log(values);
-        //要不要把username也存进路由里面？这样的话就不用redux管理了，username也可以从路由里面拿
-        const keyP = "position";
-        const keyG = "group";
-        const keyN = "username";
-        newValues[keyP] = position;
-        newValues[keyG] = groupIndex;
-        //把username取出来取代这个字符串
-        newValues[keyN] = "huangchenruo";
-    
-        console.log(newValues);
-        openNotification();
-      };
-
-    const buttonItemLayout = {
-      wrapperCol: {
-        span: 14,
-        offset: 4
+const Demo = props => {
+  const openNotification = () => {
+    notification.open({
+      message: "评分成功",
+      description: "你已完成该组的评分，请在左侧选择为其他组评分。",
+      onClick: () => {
+        console.log("Notification Clicked!");
       }
-    };
+    });
+  };
 
-    return (
-        <div>
-          <div className="markbox">
-            <Form
-              className="markform"
-              onFinish={onFinish}
-            //   from={from}
-            >
-              <Form.Item label="产品slogan" name="Question"  rules={[{ required: true, message: '此项为必填项' }]}>
-                <Input placeholder="10分" />
-              </Form.Item>
-              <Form.Item label="线上推广文案" name="Question2" rules={[{ required: true, message: '此项为必填项' }]}>
-                <Input placeholder="15分" />
-              </Form.Item>
-              <Form.Item label="活动策划idea" name="Question3" rules={[{ required: true, message: '此项为必填项' }]}>
-                <Input placeholder="15分" />
-              </Form.Item>
-              <Form.Item label="活动策划完整度" name="Question4" rules={[{ required: true, message: '此项为必填项' }]}>
-                <Input placeholder="15分" />
-              </Form.Item>
-              <Form.Item label="后期运营规划" name="Question5" rules={[{ required: true, message: '此项为必填项' }]}>
-                <Input placeholder="15分" />
-              </Form.Item>
-              <Form.Item label="产品交互方案" name="Question6" rules={[{ required: true, message: '此项为必填项' }]}>
-                <Input placeholder="10分" />
-              </Form.Item>
-              <Form.Item label="调研文档推广" name="Question7" rules={[{ required: true, message: '此项为必填项' }]}>
-                <Input placeholder="10分" />
-              </Form.Item>
-              <Form.Item label="产品名称" name="Question8" rules={[{ required: true, message: '此项为必填项' }]}>
-                <Input placeholder="10分" />
-              </Form.Item>
-              <Form.Item {...buttonItemLayout}>
-                <Button type="primary" htmlType="submit">提交</Button>
-              </Form.Item>
-            </Form>
-          </div>
-        </div>
-      );
+  const toNumberValue = obj => {
+    if (obj instanceof Array) {
+      var arr = [];
+      for (var i = 0; i < obj.length; i++) {
+        arr[i] = Number(obj[i]);
+      }
+      return arr;
+    } else if (typeof obj == "object") {
+      for (var p in obj) {
+        obj[p] = Number(obj[p]);
+      }
+    } else if (typeof obj == "string") {
+      obj = Number(obj);
     }
+    return obj;
+  };
 
-    export default Demo;
+  const onFinish = values => {
+    const oldpath = props.location.pathname;
+    const newpathArr = oldpath.split("/");
+    const position = newpathArr[2];
+    const groupIndex = newpathArr[3];
+    const newValues = toNumberValue(values);
+    // console.log(position);
+    // console.log(groupIndex);
+    // console.log(values);
+    //要不要把username也存进路由里面？这样的话就不用redux管理了，username也可以从路由里面拿
+    const keyP = "position";
+    const keyG = "group";
+    const keyN = "username";
+    newValues[keyP] = position;
+    newValues[keyG] = groupIndex;
+    //把username取出来取代这个字符串
+    newValues[keyN] = "huangchenruo";
+
+    console.log(newValues);
+    openNotification();
+  };
+
+  const buttonItemLayout = {
+    wrapperCol: {
+      span: 14,
+      offset: 4
+    }
+  };
+
+  return (
+    <div>
+      <div className="markbox">
+        <Form
+          className="markform"
+          onFinish={onFinish}
+          //   from={from}
+        >
+          <Form.Item
+            label="产品slogan"
+            name="Question"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+            ]}
+          >
+            <Input placeholder="10分" />
+          </Form.Item>
+          <Form.Item
+            label="线上推广文案"
+            name="Question2"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+            ]}
+          >
+            <Input placeholder="15分" />
+          </Form.Item>
+          <Form.Item
+            label="活动策划idea"
+            name="Question3"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+            ]}
+          >
+            <Input placeholder="15分" />
+          </Form.Item>
+          <Form.Item
+            label="活动策划完整度"
+            name="Question4"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+            ]}
+          >
+            <Input placeholder="15分" />
+          </Form.Item>
+          <Form.Item
+            label="后期运营规划"
+            name="Question5"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+            ]}
+          >
+            <Input placeholder="15分" />
+          </Form.Item>
+          <Form.Item
+            label="产品交互方案"
+            name="Question6"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+            ]}
+          >
+            <Input placeholder="10分" />
+          </Form.Item>
+          <Form.Item
+            label="调研文档推广"
+            name="Question7"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+            ]}
+          >
+            <Input placeholder="10分" />
+          </Form.Item>
+          <Form.Item
+            label="产品名称"
+            name="Question8"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" }
+            ]}
+          >
+            <Input placeholder="10分" />
+          </Form.Item>
+          <Form.Item {...buttonItemLayout}>
+            <Button type="primary" htmlType="submit">
+              提交
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
+    </div>
+  );
+};
+
+export default Demo;
