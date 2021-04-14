@@ -1,9 +1,68 @@
-import React from "react";
+import React, { useEffect } from "react";
 import store from '../../../store/index';
-import "./index.css";
-import { Form, Input, Button, notification } from "antd";
+import { Form, Button, notification } from "antd";
+
+import InputNumberItem from '../../components/input-number-item';
+
+const layout = {
+  labelCol: { span: 9 },
+  wrapperCol: { span: 6 },
+};
+
+const buttonItemLayout = {
+  wrapperCol: {
+    span: 12,
+    offset: 9
+  }
+};
+
+const datas = [
+  {
+    label: "产品slogan",
+    name: "Question",
+    maxScore: 10,
+  },
+  {
+    label: "线上推广文案",
+    name: "线上推广文案",
+    maxScore: 15,
+  },
+  {
+    label: "活动策划idea",
+    name: "活动策划idea",
+    maxScore: 15,
+  },
+  {
+    label: "活动策划完整度",
+    name: "活动策划完整度",
+    maxScore: 15,
+  },
+  {
+    label: "后期运营规划",
+    name: "后期运营规划",
+    maxScore: 15,
+  },
+  {
+    label: "产品交互方案",
+    name: "产品交互方案",
+    maxScore: 10,
+  },
+  {
+    label: "调研文档推广",
+    name: "调研文档推广",
+    maxScore: 10,
+  },
+  {
+    label: "产品名称",
+    name: "产品名称",
+    maxScore: 10,
+  },
+
+]
 
 const Demo = props => {
+  const [form] = Form.useForm();
+
   const openNotification = () => {
     notification.open({
       message: "评分成功",
@@ -13,6 +72,11 @@ const Demo = props => {
       }
     });
   };
+
+  //路由切换时清空表单中的内容
+  useEffect(() => {
+    form.resetFields();
+  }, [form, props.history.location]);
 
   const toNumberValue = obj => {
     if (obj instanceof Array) {
@@ -51,117 +115,23 @@ const Demo = props => {
     openNotification();
   };
 
-  const buttonItemLayout = {
-    wrapperCol: {
-      span: 14,
-      offset: 4
-    }
-  };
-
   return (
-    <div>
-      <div className="markbox">
-        <Form
-          className="markform"
-          onFinish={onFinish}
-          //   from={from}
-        >
-          <Form.Item
-            label="产品slogan"
-            name="Question"
-            rules={[
-              { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^10/, "g"), message: "此项最高分为10分" }
-            ]}
-          >
-            <Input placeholder="10分" type='number'/>
-          </Form.Item>
-          <Form.Item
-            label="线上推广文案"
-            name="Question2"
-            rules={[
-              { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
-            ]}
-          >
-            <Input placeholder="15分" type='number'/>
-          </Form.Item>
-          <Form.Item
-            label="活动策划idea"
-            name="Question3"
-            rules={[
-              { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
-            ]}
-          >
-            <Input placeholder="15分" type='number'/>
-          </Form.Item>
-          <Form.Item
-            label="活动策划完整度"
-            name="Question4"
-            rules={[
-              { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
-            ]}
-          >
-            <Input placeholder="15分" type='number'/>
-          </Form.Item>
-          <Form.Item
-            label="后期运营规划"
-            name="Question5"
-            rules={[
-              { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
-            ]}
-          >
-            <Input placeholder="15分" type='number'/>
-          </Form.Item>
-          <Form.Item
-            label="产品交互方案"
-            name="Question6"
-            rules={[
-              { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
-            ]}
-          >
-            <Input placeholder="10分" type='number'/>
-          </Form.Item>
-          <Form.Item
-            label="调研文档推广"
-            name="Question7"
-            rules={[
-              { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }           
-            ]}
-          >
-            <Input placeholder="10分" type='number'/>
-          </Form.Item>
-          <Form.Item
-            label="产品名称"
-            name="Question8"
-            rules={[
-              { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
-            ]}
-          >
-            <Input placeholder="10分" type='number'/>
-          </Form.Item>
-          <Form.Item {...buttonItemLayout}>
-            <Button type="primary" htmlType="submit">
-              提交
-            </Button>
-          </Form.Item>
-        </Form>
-      </div>
-    </div>
+    <Form
+      {...{ form }}
+      {...layout}
+      onFinish={onFinish}
+    >
+      {
+        datas.map(item => (
+          <InputNumberItem {...item} />
+        ))
+      }
+      <Form.Item {...buttonItemLayout}>
+        <Button type="primary" htmlType="submit">
+          提交
+        </Button>
+      </Form.Item>
+    </Form>
   );
 };
 

@@ -3,6 +3,8 @@ import { Route } from "react-router";
 import store from '../../store/index';
 import { Layout, Menu } from "antd";
 
+import logo from '../../assets/logo.svg';
+
 import director from "../mark/markForDi/index";
 import product from "../mark/markForPm/index";
 import design from "../mark/markForUi/index";
@@ -38,7 +40,14 @@ export default class init_page extends Component {
 
   render() {
     return (
-      <div>
+      <Layout style={{ minHeight: "100vh" }}>
+          <Header
+            className="site-layout-sub-header-background"
+            style={{ padding: "0 25px", color: "#FFF", fontSize: 18, letterSpacing: 3}}
+          >
+            <img src={logo} alt="" style={{width: 30, marginRight: 15}} />
+            Hackton评分系统
+          </Header>
         <Layout>
           <Sider
             breakpoint="lg"
@@ -105,10 +114,6 @@ export default class init_page extends Component {
             </Menu>
           </Sider>
           <Layout>
-            <Header
-              className="site-layout-sub-header-background"
-              style={{ padding: 0 }}
-            />
             <Content style={{ margin: "24px 16px 0" }}>
               <div
                 className="site-layout-background"
@@ -116,13 +121,7 @@ export default class init_page extends Component {
               >
                 {/* 我记得好像可以写在router.js里，然后在这里逐次遍历，但不记得具体怎么写了，先这样用着。你妈的 看起来真丑啊*/}
                 <div className="route">
-                  <Route path="/init/director/1" component={director} />
-                  <Route path="/init/director/2" component={director} />
-                  <Route path="/init/director/3" component={director} />
-                  <Route path="/init/director/4" component={director} />
-                  <Route path="/init/director/5" component={director} />
-                  <Route path="/init/director/6" component={director} />
-                  <Route path="/init/director/7" component={director} />
+                  <Route path="/init/director" component={director} />
                   <Route path="/init/product/1" component={product} />
                   <Route path="/init/product/2" component={product} />
                   <Route path="/init/product/3" component={product} />
@@ -155,19 +154,18 @@ export default class init_page extends Component {
               </div>
             </Content>
             <Footer style={{ textAlign: "center" }}>
-              Ant Design ©2018 Created by Ant UED
+              NCUHOME ©2021 Created by love
             </Footer>
           </Layout>
         </Layout>
-        ,
-      </div>
+      </Layout>
     );
   }
 
   componentDidMount() {
     console.log("subscribe", store.getState());
     const name = store.getState().username;
-    if(name === '') {
+    if (name === '') {
       alert('请先登陆！');
       hashHistory.push('/')
     }
