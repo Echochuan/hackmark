@@ -1,0 +1,166 @@
+{
+  "director": [
+    {
+      "label": "产品slogan",
+      "name": "产品slogan",
+      "maxScore": 10
+    },
+    {
+      "label": "线上推广文案",
+      "name": "线上推广文案",
+      "maxScore": 15
+    },
+    {
+      "label": "活动策划idea",
+      "name": "活动策划idea",
+      "maxScore": 15
+    },
+    {
+      "label": "活动策划完整度",
+      "name": "活动策划完整度",
+      "maxScore": 15
+    },
+    {
+      "label": "后期运营规划",
+      "name": "后期运营规划",
+      "maxScore": 15
+    },
+    {
+      "label": "产品交互方案",
+      "name": "产品交互方案",
+      "maxScore": 10
+    },
+    {
+      "label": "调研文档推广",
+      "name": "调研文档推广",
+      "maxScore": 10
+    },
+    {
+      "label": "产品名称",
+      "name": "产品名称",
+      "maxScore": 10
+    }
+  ],
+  "product": [
+    {
+      "label": "产品创新性",
+      "name": "产品创新性",
+      "maxScore": 15
+    },
+    {
+      "label": "产品使用场景合理性",
+      "name": "产品使用场景合理性",
+      "maxScore": 10
+    },
+    {
+      "label": "主题符合度",
+      "name": "主题符合度",
+      "maxScore": 5
+    },
+    {
+      "label": "调研文档",
+      "name": "调研文档",
+      "maxScore": 10
+    },
+    {
+      "label": "需求文档",
+      "name": "需求文档",
+      "maxScore": 15
+    },
+    {
+      "label": "产品原型图",
+      "name": "产品原型图",
+      "maxScore": 15
+    },
+    {
+      "label": "竞品分析",
+      "name": "竞品分析",
+      "maxScore": 15
+    }
+  ],
+  "design": [
+    {
+      "label": "设计规范",
+      "name": "设计规范",
+      "maxScore": 15
+    },
+    {
+      "label": "美观性",
+      "name": "美观性",
+      "maxScore": 15
+    },
+
+    {
+      "label": "友好性",
+      "name": "友好性",
+      "maxScore": 15
+    },
+
+    {
+      "label": "可实现性",
+      "name": "可实现性",
+      "maxScore": 15
+    },
+    {
+      "label": "字体选择",
+      "name": "字体选择",
+      "maxScore": 15
+    },
+    {
+      "label": "交互思路",
+      "name": "交互思路",
+      "maxScore": 15
+    }
+  ],
+  "front": [
+    {
+      "label": "功能完整性",
+      "name": "功能完整性",
+      "maxScore": 15
+    },
+    {
+      "label": "与设计稿贴合程度",
+      "name": "与设计稿贴合程度",
+      "maxScore": 15
+    },
+    {
+      "label": "布局样式实现",
+      "name": "布局样式实现",
+      "maxScore": 15
+    },
+    {
+      "label": "业务逻辑实现/代码规范/封装性",
+      "name": "业务逻辑实现/代码规范/封装性",
+      "maxScore": 15
+    },
+    {
+      "label": "页面流畅度/首屏加载优化/资源压缩",
+      "name": "页面流畅度/首屏加载优化/资源压缩",
+      "maxScore": 15
+    },
+    {
+      "label": "与后端数据对接完整度",
+      "name": "与后端数据对接完整度",
+      "maxScore": 15
+    },
+    {
+      "label": "交互思路",
+      "name": "交互思路",
+      "maxScore": 15
+    }
+  ],
+  "back": [
+    {
+      "label": "blabla",
+      "name": "blabla",
+      "maxScore": 15
+    }
+  ],
+  "show": [
+    {
+      "label": "blabla",
+      "name": "blabla",
+      "maxScore": 15
+    }
+  ]
+}

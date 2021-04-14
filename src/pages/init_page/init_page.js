@@ -1,16 +1,9 @@
 import React, { Component } from "react";
-import { Route } from "react-router";
 import store from '../../store/index';
 import { Layout, Menu } from "antd";
 
 import logo from '../../assets/logo.svg';
-
-import director from "../mark/markForDi/index";
-import product from "../mark/markForPm/index";
-import design from "../mark/markForUi/index";
-import front from "../mark/markForFe/index";
-import back from "../mark/markForBe/index";
-import show from "../mark/markForShow/index";
+import Mark from "../mark";
 
 import { UserOutlined } from "@ant-design/icons";
 
@@ -36,7 +29,7 @@ export default class init_page extends Component {
     const group = e.keyPath[0];
     const groupid = this.updata(group);
     // console.log(groupid);
-    hashHistory.push("/init/" + position + "/" + groupid);
+    hashHistory.push("/mark/" + position + "/" + groupid);
   };
 
   render() {
@@ -131,42 +124,7 @@ export default class init_page extends Component {
               >
                 {/* 我记得好像可以写在router.js里，然后在这里逐次遍历，但不记得具体怎么写了，先这样用着。你妈的 看起来真丑啊*/}
                 <div className="route">
-                  <Route path="/init/director" component={director} />
-                  <Route path="/init/product/1" component={product} />
-                  <Route path="/init/product/2" component={product} />
-                  <Route path="/init/product/3" component={product} />
-                  <Route path="/init/product/4" component={product} />
-                  <Route path="/init/product/5" component={product} />
-                  <Route path="/init/product/6" component={product} />
-                  <Route path="/init/product/7" component={product} />
-                  <Route path="/init/design/1" component={design} />
-                  <Route path="/init/design/2" component={design} />
-                  <Route path="/init/design/3" component={design} />
-                  <Route path="/init/design/4" component={design} />
-                  <Route path="/init/design/5" component={design} />
-                  <Route path="/init/design/6" component={design} />
-                  <Route path="/init/design/7" component={design} />
-                  <Route path="/init/front/1" component={front} />
-                  <Route path="/init/front/2" component={front} />
-                  <Route path="/init/front/3" component={front} />
-                  <Route path="/init/front/4" component={front} />
-                  <Route path="/init/front/5" component={front} />
-                  <Route path="/init/front/6" component={front} />
-                  <Route path="/init/front/7" component={front} />
-                  <Route path="/init/back/1" component={back} />
-                  <Route path="/init/back/2" component={back} />
-                  <Route path="/init/back/3" component={back} />
-                  <Route path="/init/back/4" component={back} />
-                  <Route path="/init/back/5" component={back} />
-                  <Route path="/init/back/6" component={back} />
-                  <Route path="/init/back/7" component={back} />
-                  <Route path="/init/show/1" component={show} />
-                  <Route path="/init/show/2" component={show} />
-                  <Route path="/init/show/3" component={show} />
-                  <Route path="/init/show/4" component={show} />
-                  <Route path="/init/show/5" component={show} />
-                  <Route path="/init/show/6" component={show} />
-                  <Route path="/init/show/7" component={show} />
+                  <Mark />
                 </div>
               </div>
             </Content>
@@ -182,10 +140,10 @@ export default class init_page extends Component {
   componentDidMount() {
     console.log("subscribe", store.getState());
     const name = store.getState().username;
-    if (name === '') {
-      alert('请先登陆！');
-      hashHistory.push('/')
-    }
+    // if (name === '') {
+    //   alert('请先登陆！');
+    //   hashHistory.push('/')
+    // }
     store.subscribe(() => {
       console.log("subscribe", store.getState());
       this.setState({});
