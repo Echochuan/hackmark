@@ -1,4 +1,5 @@
 import React from "react";
+import store from '../../../store/index';
 import "./index.css";
 import { Form, Input, Button, notification } from "antd";
 
@@ -31,6 +32,7 @@ const Demo = props => {
   };
 
   const onFinish = values => {
+    const user = store.getState().username;
     const oldpath = props.location.pathname;
     const newpathArr = oldpath.split("/");
     const position = newpathArr[2];
@@ -39,15 +41,12 @@ const Demo = props => {
     // console.log(position);
     // console.log(groupIndex);
     // console.log(values);
-    //要不要把username也存进路由里面？这样的话就不用redux管理了，username也可以从路由里面拿
     const keyP = "position";
     const keyG = "group";
     const keyN = "username";
     newValues[keyP] = position;
     newValues[keyG] = groupIndex;
-    //把username取出来取代这个字符串
-    newValues[keyN] = "huangchenruo";
-
+    newValues[keyN] = user;
     console.log(newValues);
     openNotification();
   };
