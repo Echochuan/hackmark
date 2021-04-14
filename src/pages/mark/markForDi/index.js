@@ -2,19 +2,8 @@ import React, { useEffect } from "react";
 import store from '../../../store/index';
 import { Form, Button, notification } from "antd";
 
+import { layout, buttonItemLayout } from '../../../assets/gutter'
 import InputNumberItem from '../../components/input-number-item';
-
-const layout = {
-  labelCol: { span: 9 },
-  wrapperCol: { span: 6 },
-};
-
-const buttonItemLayout = {
-  wrapperCol: {
-    span: 12,
-    offset: 9
-  }
-};
 
 const datas = [
   {
