@@ -9,7 +9,7 @@ export default class App extends Component {
     return (
       <div>
         <Route path="/" component={login} exact/>
-        <Route path="/init" component={initPage}></Route>
+        <Route path="/mark" component={initPage}></Route>
       </div>
     );
   }

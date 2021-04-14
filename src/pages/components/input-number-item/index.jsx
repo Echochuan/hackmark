@@ -37,7 +37,7 @@ const InputNumberItem = ({ label, name, maxScore }) => {
     >
       <Input
         type="number"
-        min={8}
+        min={0}
         max={maxScore}
         value={number.value}
         onChange={onNumberChange}
