@@ -122,7 +122,7 @@ const Demo = props => {
             <Input placeholder="15分" type='number'/>
           </Form.Item>
           <Form.Item
-            label="产品交互方案"
+            label="产品交互文案"
             name="Question6"
             rules={[
               { required: true, message: "此项为必填项" },
