@@ -47,7 +47,7 @@ export default class init_page extends Component {
             style={{ padding: "0 25px", color: "#FFF", fontSize: 18, letterSpacing: 3}}
           >
             <img src={logo} alt="" style={{width: 30, marginRight: 15}} />
-            Hackton评分系统
+            Hackathon评分系统
           </Header>
         <Layout>
           <Sider

@@ -5,7 +5,7 @@ const validateNumber = (number, maxScore) => {
   if (number < 0 || number > maxScore) {
     return {
       validateStatus: 'error',
-      errorMsg: '该项的评分范围为0~10!',
+      errorMsg: '该项的评分范围为0~'+ maxScore,
     };
   }
   return {
