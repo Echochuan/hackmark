@@ -8,6 +8,7 @@ import product from "../mark/markForPm/index";
 import design from "../mark/markForUi/index";
 import front from "../mark/markForFe/index";
 import back from "../mark/markForBe/index";
+import show from "../mark/markForShow/index";
 
 import { UserOutlined } from "@ant-design/icons";
 
@@ -102,6 +103,15 @@ export default class init_page extends Component {
                 <Menu.Item key="34">第六组</Menu.Item>
                 <Menu.Item key="35">第七组</Menu.Item>
               </SubMenu>
+              <SubMenu key="show" icon={<UserOutlined />} title="路演">
+                <Menu.Item key="36">第一组</Menu.Item>
+                <Menu.Item key="37">第二组</Menu.Item>
+                <Menu.Item key="38">第三组</Menu.Item>
+                <Menu.Item key="39">第四组</Menu.Item>
+                <Menu.Item key="40">第五组</Menu.Item>
+                <Menu.Item key="41">第六组</Menu.Item>
+                <Menu.Item key="42">第七组</Menu.Item>
+              </SubMenu>
             </Menu>
           </Sider>
           <Layout>
@@ -151,6 +161,13 @@ export default class init_page extends Component {
                   <Route path="/init/back/5" component={back} />
                   <Route path="/init/back/6" component={back} />
                   <Route path="/init/back/7" component={back} />
+                  <Route path="/init/show/1" component={show} />
+                  <Route path="/init/show/2" component={show} />
+                  <Route path="/init/show/3" component={show} />
+                  <Route path="/init/show/4" component={show} />
+                  <Route path="/init/show/5" component={show} />
+                  <Route path="/init/show/6" component={show} />
+                  <Route path="/init/show/7" component={show} />
                 </div>
               </div>
             </Content>

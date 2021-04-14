@@ -67,51 +67,51 @@ const Demo = props => {
           //   from={from}
         >
           <Form.Item
-            label="完成度"
+            label="产品创新性"
             name="Question"
             rules={[
               { required: true, message: "此项为必填项" },
               { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+              { pattern: new RegExp( /^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
             ]}
           >
-            <Input placeholder="10分" type='number'/>
+            <Input placeholder="15分" type='number'/>
           </Form.Item>
           <Form.Item
-            label="交互体验"
+            label="产品使用场景合理性"
             name="Question2"
             rules={[
               { required: true, message: "此项为必填项" },
               { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
-            ]}
-          >
-            <Input placeholder="15分" type='number'/>
-          </Form.Item>
-          <Form.Item
-            label="调研文档"
-            name="Question3"
-            rules={[
-              { required: true, message: "此项为必填项" },
-              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
             <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item
-            label="需求分析"
+            label="主题符合度"
+            name="Question3"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-5]$/, "g"), message: "此项最高分为5分" }
+            ]}
+          >
+            <Input placeholder="5分" type='number'/>
+          </Form.Item>
+          <Form.Item
+            label="调研文档"
             name="Question4"
             rules={[
               { required: true, message: "此项为必填项" },
               { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^[0-9]$|^1[0-5]$/, "g"), message: "此项最高分为15分" }
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
-            <Input placeholder="15分" type='number'/>
+            <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item
-            label="产品创意"
+            label="需求文档"
             name="Question5"
             rules={[
               { required: true, message: "此项为必填项" },
@@ -122,7 +122,7 @@ const Demo = props => {
             <Input placeholder="15分" type='number'/>
           </Form.Item>
           <Form.Item
-            label="逻辑缜密"
+            label="产品原型图"
             name="Question6"
             rules={[
               { required: true, message: "此项为必填项" },
@@ -133,23 +133,45 @@ const Demo = props => {
             <Input placeholder="15分" type='number'/>
           </Form.Item>
           <Form.Item
-            label="迭代计划"
+            label="竞品分析"
             name="Question7"
             rules={[
               { required: true, message: "此项为必填项" },
               { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+              { pattern: new RegExp( /^[0-5]$/, "g"), message: "此项最高分为5分" }
+            ]}
+          >
+            <Input placeholder="5分" type='number'/>
+          </Form.Item>
+          <Form.Item
+            label="需求管理"
+            name="Question8"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-5]$/, "g"), message: "此项最高分为5分" }
+            ]}
+          >
+            <Input placeholder="5分" type='number'/>
+          </Form.Item>
+          <Form.Item
+            label="项目管理"
+            name="Question9"
+            rules={[
+              { required: true, message: "此项为必填项" },
+              { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
             <Input placeholder="10分" type='number'/>
           </Form.Item>
           <Form.Item
-            label="反思总结"
-            name="Question8"
+            label="迭代计划"
+            name="Question10"
             rules={[
               { required: true, message: "此项为必填项" },
               { pattern: new RegExp(/^[1-9]\d*$/, "g"), message: "请输入数字" },
-              { pattern: new RegExp( /^[0-9]$|^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
+              { pattern: new RegExp( /^[0-9]$|^10$/, "g"), message: "此项最高分为10分" }
             ]}
           >
             <Input placeholder="10分" type='number'/>
