@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router";
+import store from '../../store/index';
 import { Layout, Menu } from "antd";
 
 import director from "../mark/markForDi/index";
@@ -162,4 +163,18 @@ export default class init_page extends Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    console.log("subscribe", store.getState());
+    const name = store.getState().username;
+    if(name === '') {
+      alert('请先登陆！');
+      hashHistory.push('/')
+    }
+    store.subscribe(() => {
+      console.log("subscribe", store.getState());
+      this.setState({});
+    });
+  }
+
 }
