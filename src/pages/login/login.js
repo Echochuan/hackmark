@@ -35,7 +35,7 @@ class Login extends React.Component {
       console.log(hashHistory);
       if (id.username === values.username && id.password === values.password) {
         console.log("yes!");
-        hashHistory.push("init");
+        hashHistory.push("mark");
       } else {
         alert("信息错误");
       }
