@@ -3,6 +3,12 @@ const getName = (value) => ({
     username: value,
 })
 
+const getToken = (value) => ({
+    type: 'get_token',
+    token: value
+})
+
 module.exports = {
-    getName
+    getName,
+    getToken
 };

@@ -92,6 +92,7 @@ const Demo = props => {
     // const newValues = {...values};
     const newValues = toNumberValue(values);
     const username = store.getState().username;
+    const token = store.getState().token;
     const user = { ...info };
 
     // const keyP = "position";
@@ -101,7 +102,7 @@ const Demo = props => {
     // newValues[keyP] = user.position;
     newValues[keyG] = user.group;
     newValues[keyN] = username;
-    newValues[keyT] = "balabalabala";
+    newValues[keyT] = token;
 
     // console.log(username);
     // console.log(user);

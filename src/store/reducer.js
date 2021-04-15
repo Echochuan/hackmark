@@ -1,9 +1,15 @@
 const defaultState = {
-    username: ''
+    username: '',
+    token: '',
 }
 
 // eslint-disable-next-line
 export default (state = defaultState, action) => {
     console.log('redux is on');
-    return action['type'] === 'get_name' ? Object.assign({}, state, action) : state;
+    if (action['type'] === 'get_name') {
+        return Object.assign({}, state, action)
+    } else if (action['type'] === 'get_token') {
+        return Object.assign({}, state, action)
+    }
+    return state;
 }
