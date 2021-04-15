@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import './index.css';
 import store from "../../store/index";
-import { Form, Button, notification } from "antd";
+import { Form, Button, notification,message } from "antd";
 
 import { withRouter } from "react-router-dom";
 
@@ -32,7 +31,6 @@ const openNotification = () => {
   });
 };
 
-
 const Demo = props => {
   const [form] = Form.useForm();
   const [info, setInfo] = useState({});
@@ -50,17 +48,21 @@ const Demo = props => {
     setInfo(analyzePath(props.history.location.pathname));
   }, [form, props.history.location]);
 
+  const warning = () => {
+    message.warning('已完成所有小组评分');
+  };
+
   const nextGroup = () => {
     //获取现在是第几组，如果是1-6组，点击后跳转到下一组；如果是第7组，则出一个alert说评分已结束
     const user = { ...info };
-    const groupid = (+user.group)+1;
-    console.log(groupid)
+    const groupid = +user.group + 1;
+    console.log(groupid);
     if (user.group === "7") {
-      alert("已评完所有小组！");
+        warning();
       return;
     }
     hashHistory.push("/mark/" + user.position + "/" + groupid);
-  }
+  };
 
   const toNumberValue = obj => {
     if (obj instanceof Array) {
@@ -119,7 +121,7 @@ const Demo = props => {
           <Button type="primary" htmlType="submit">
             提交
           </Button>
-          <Button type="primary" className="nextBtn" onClick={nextGroup}>
+          <Button type="primary" style={{ marginLeft: 40 }} onClick={nextGroup}>
             下一组
           </Button>
         </Form.Item>
