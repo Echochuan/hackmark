@@ -1,6 +1,6 @@
 import React from "react";
 import store from "../../store/index";
-import logo from '../../assets/logo.svg';
+import logo from "../../assets/logo.svg";
 import { getName, getToken } from "../../action/index";
 import "./login.css";
 
@@ -52,20 +52,19 @@ class Login extends React.Component {
       console.log("Failed:", errorInfo);
     };
 
-    const login = values => {
-      if (true) {
-        console.log("yes");
-      } else {
-        console.log("false");
-      }
-    };
-
     return (
       <div className="loginBox">
         <div className="loginBox1">
-          <div class="login-header">
-          <img src={logo} alt="" style={{width: 30, marginLeft: 15}} />
-            {/* <p>欢迎使用HACK评分系统</p> */}
+          <div
+            class="login-header"
+            // style={{
+            //   padding: "0 25px",
+            //   color: "black",
+            //   fontSize: 15,
+            //   letterSpacing: 3
+            // }}
+          >
+            <img src={logo} alt="" style={{ width: 30, marginLeft: 15}} />
           </div>
           <Form
             {...layout}
@@ -103,7 +102,7 @@ class Login extends React.Component {
             </Form.Item>
 
             <Form.Item {...tailLayout}>
-              <Button type="primary" htmlType="submit" onClick={login}>
+              <Button type="primary" htmlType="submit">
                 登陆
               </Button>
             </Form.Item>
