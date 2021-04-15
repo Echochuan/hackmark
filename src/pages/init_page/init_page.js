@@ -171,7 +171,7 @@ export default class init_page extends Component {
 
   componentDidMount() {
     console.log("subscribe", store.getState());
-    const name = store.getState().username;
+    // const name = store.getState().username;
     // if (name === '') {
     //   alert('请先登陆！');
     //   hashHistory.push('/')
