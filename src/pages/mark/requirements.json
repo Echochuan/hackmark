@@ -151,16 +151,111 @@
   ],
   "back": [
     {
-      "label": "blabla",
-      "name": "blabla",
+      "label": "完整度/丰富度",
+      "name": "完整度/丰富度",
       "maxScore": 15
+    },
+    {
+      "label": "性能",
+      "name": "性能",
+      "maxScore": 18
+    },
+    {
+      "label": "扩展性",
+      "name": "扩展性",
+      "maxScore": 7
+    },
+    {
+      "label": "HTTPS证书",
+      "name": "HTTPS证书",
+      "maxScore": 2
+    },
+    {
+      "label": "项目敏感配置",
+      "name": "项目敏感配置",
+      "maxScore": 3
+    },
+    {
+      "label": "数据敏感信息",
+      "name": "数据敏感信息",
+      "maxScore": 3
+    },
+    {
+      "label": "代码规范性",
+      "name": "代码规范性",
+      "maxScore": 8
+    },
+    {
+      "label": "数据库规范性",
+      "name": "数据库规范性",
+      "maxScore": 6
+    },
+    {
+      "label": "接口文档",
+      "name": "接口文档",
+      "maxScore": 3
+    },
+    {
+      "label": "数据库文档",
+      "name": "数据库文档",
+      "maxScore": 3
+    },
+    {
+      "label": "单元测试代码覆盖率",
+      "name": "单元测试代码覆盖率",
+      "maxScore": 7
+    },
+    {
+      "label": "能现场给出解决方案",
+      "name": "能现场给出解决方案",
+      "maxScore": 5
     }
   ],
   "show": [
     {
-      "label": "blabla",
-      "name": "blabla",
-      "maxScore": 15
+      "label": "路演表现",
+      "name": "路演表现",
+      "maxScore": 20
+    },
+    {
+      "label": "PPT契合项目",
+      "name": "PPT契合项目",
+      "maxScore": 10
+    },
+    {
+      "label": "PPT逻辑框架",
+      "name": "PPT逻辑框架",
+      "maxScore": 10
+    },
+    {
+      "label": "PPT突出重点",
+      "name": "PPT突出重点",
+      "maxScore": 10
+    },
+    {
+      "label": "PPT设计创意",
+      "name": "PPT设计创意",
+      "maxScore": 10
+    },
+    {
+      "label": "PPT统一风格",
+      "name": "PPT统一风格",
+      "maxScore": 10
+    },
+    {
+      "label": "PPT颜色搭配",
+      "name": "PPT颜色搭配",
+      "maxScore": 10
+    },
+    {
+      "label": "PPT动画效果",
+      "name": "PPT动画效果",
+      "maxScore": 10
+    },
+    {
+      "label": "PPT文案雕琢",
+      "name": "PPT文案雕琢",
+      "maxScore": 10
     }
   ]
 }
