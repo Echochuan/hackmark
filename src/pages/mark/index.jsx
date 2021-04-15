@@ -165,7 +165,7 @@ const Demo = props => {
         hoverable
         style={{ width: 240, margin: "20px auto" }}
       >
-        <Meta title={nowPosition} description={"第" + { ...info }.group + "组"} />
+        <Meta title={nowPosition} description={`第${{ ...info }.group}组`} />
       </Card>
       <Form
         {...{ form }}
