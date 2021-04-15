@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import store from "../../store/index";
-import { Form, Button, notification,message } from "antd";
+import { Form, Button, notification, message, Card } from "antd";
 
 import { withRouter } from "react-router-dom";
 
@@ -12,6 +12,8 @@ import InputNumberItem from "../components/input-number-item";
 import requirements from "./requirements.json";
 
 const hashHistory = createHashHistory();
+
+const { Meta } = Card;
 
 const analyzePath = path => {
   const arr = path.split("/");
@@ -42,6 +44,32 @@ const Demo = props => {
 
   useEffect(resetformData, [info]);
 
+  //获取并展示当前组别
+  const getPosition = () => {
+    const user = {...info}
+    console.log(user.position)
+    if (user.position === "director") {
+      return "运营组"
+    } 
+    else if (user.position === "product") {
+      return "产品组"
+    }
+    else if (user.position === "design") {
+      return "设计组"
+    }
+    else if (user.position === "front") {
+      return "前端组"
+    }
+    else if (user.position === "back") {
+      return "后端组"
+    }
+    else if (user.position === "show") {
+      return "路演"
+    }
+  }
+
+const nowPosition = getPosition()
+
   //路由切换时清空表单中的内容
   useEffect(() => {
     form.resetFields();
@@ -49,7 +77,7 @@ const Demo = props => {
   }, [form, props.history.location]);
 
   const warning = () => {
-    message.warning('已完成所有小组评分');
+    message.warning("已完成所有小组评分");
   };
 
   const nextGroup = () => {
@@ -58,7 +86,7 @@ const Demo = props => {
     const groupid = +user.group + 1;
     console.log(groupid);
     if (user.group === "7") {
-        warning();
+      warning();
       return;
     }
     hashHistory.push("/mark/" + user.position + "/" + groupid);
@@ -113,20 +141,33 @@ const Demo = props => {
     openNotification();
   };
 
+
   return (
-    <Form {...{ form }} {...layout} onFinish={onFinish}>
-      {formData && formData.map(item => <InputNumberItem {...item} />)}
-      {formData && formData.length > 0 && (
-        <Form.Item {...buttonItemLayout}>
-          <Button type="primary" htmlType="submit">
-            提交
-          </Button>
-          <Button type="primary" style={{ marginLeft: 40 }} onClick={nextGroup}>
-            下一组
-          </Button>
-        </Form.Item>
-      )}
-    </Form>
+    <>
+      <Card
+        hoverable
+        style={{ width: 240 }}
+      >
+        <Meta title={nowPosition} description={"第" + {...info}.group+"组" }/>
+      </Card>
+      <Form {...{ form }} {...layout} onFinish={onFinish}>
+        {formData && formData.map(item => <InputNumberItem {...item} />)}
+        {formData && formData.length > 0 && (
+          <Form.Item {...buttonItemLayout}>
+            <Button type="primary" htmlType="submit">
+              提交
+            </Button>
+            <Button
+              type="primary"
+              style={{ marginLeft: 40 }}
+              onClick={nextGroup}
+            >
+              下一组
+            </Button>
+          </Form.Item>
+        )}
+      </Form>
+    </>
   );
 };
 
