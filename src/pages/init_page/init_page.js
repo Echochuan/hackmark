@@ -14,6 +14,20 @@ const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 export default class init_page extends Component {
+  constructor(props) {
+    super(props);
+    this.state =  {
+        collapsed: true
+    }
+}
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
+    }, () => {
+      console.log(this.state.collapsed)
+    });
+  };
+
   updata = value => {
     // console.log("updata start");
     // console.log(value);
@@ -24,7 +38,19 @@ export default class init_page extends Component {
     return value;
   };
 
+  //判断是否为移动设备
+  isMobile = () => {
+    var sUserAgent = navigator.userAgent;
+    if (sUserAgent.indexOf('Android') > -1 || sUserAgent.indexOf('iPhone') > -1 || sUserAgent.indexOf('iPad') > -1 || sUserAgent.indexOf('iPod') > -1 || sUserAgent.indexOf('Symbian') > -1) {
+      return true;
+    }
+  }
+
   Click = e => {
+    if (this.isMobile()) {
+      this.toggle();
+    }
+    console.log(this.state.collapsed);
     const position = e.keyPath[1];
     const group = e.keyPath[0];
     const groupid = this.updata(group);
@@ -39,20 +65,16 @@ export default class init_page extends Component {
     if (position === "product") {
       const key = 7 + +group;
       return key.toString();
-    }
-    else if (position === "design") {
+    } else if (position === "design") {
       const key = 14 + +group;
       return key.toString();
-    }
-    else if (position === "front") {
+    } else if (position === "front") {
       const key = 21 + +group;
       return key.toString();
-    }
-    else if (position === "back") {
+    } else if (position === "back") {
       const key = 28 + +group;
       return key.toString();
-    }
-    else if (position === "show") {
+    } else if (position === "show") {
       const key = 35 + +group;
       return key.toString();
     }
@@ -78,11 +100,14 @@ export default class init_page extends Component {
           <Sider
             breakpoint="lg"
             collapsedWidth="0"
+            collapsed={this.state.collapsed}
+            collapsible
             onBreakpoint={broken => {
               console.log(broken);
             }}
             onCollapse={(collapsed, type) => {
               console.log(collapsed, type);
+              this.toggle()
             }}
           >
             <div className="logo" />
