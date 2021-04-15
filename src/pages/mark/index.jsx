@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import store from "../../store/index";
-import { Form, Button, notification, message, Card } from "antd";
+import { Form, Button, notification, message, Card, Row, Col } from "antd";
 
 import { withRouter } from "react-router-dom";
 
 import createHashHistory from "history/createHashHistory";
 
-import { layout, buttonItemLayout } from "../../assets/gutter";
 import InputNumberItem from "../components/input-number-item";
 
 import requirements from "./requirements.json";
@@ -14,6 +13,24 @@ import requirements from "./requirements.json";
 const hashHistory = createHashHistory();
 
 const { Meta } = Card;
+
+const layout = {
+  labelCol: { sm: 7, lg: 6 },
+  wrapperCol: { sm: 10, lg: 12 },
+};
+
+const buttonItemLayout = {
+  wrapperCol: {
+    sm: {
+      offset: 7,
+      span: 9
+    },
+    lg: {
+      offset: 6,
+      span: 12
+    }
+  }
+}
 
 const analyzePath = path => {
   const arr = path.split("/");
@@ -49,18 +66,18 @@ const Demo = props => {
     if (user === undefined) {
       return "欢迎使用评分系统"
     }
-    return "第" + user + "组"
+    return `第${user}组`
   }
 
   const getgroup = getGroup();
 
   //获取并展示当前组别
   const getPosition = () => {
-    const user = {...info}
+    const user = { ...info }
     console.log(user.position)
     if (user.position === "director") {
       return "运营组"
-    } 
+    }
     else if (user.position === "product") {
       return "产品组"
     }
@@ -78,7 +95,7 @@ const Demo = props => {
     }
   }
 
-const nowPosition = getPosition()
+  const nowPosition = getPosition()
 
   //路由切换时清空表单中的内容
   useEffect(() => {
@@ -156,24 +173,33 @@ const nowPosition = getPosition()
     <>
       <Card
         hoverable
-        style={{ width: 240 ,margin: "20px auto"}}
+        style={{ width: 240, margin: "20px auto" }}
       >
         <Meta title={nowPosition} description={getgroup}/>
       </Card>
-      <Form {...{ form }} {...layout} onFinish={onFinish}>
+      <Form
+        {...{ form }}
+        {...layout}
+        onFinish={onFinish}>
         {formData && formData.map(item => <InputNumberItem {...item} />)}
         {formData && formData.length > 0 && (
           <Form.Item {...buttonItemLayout}>
-            <Button type="primary" htmlType="submit">
-              提交
-            </Button>
-            <Button
-              type="primary"
-              style={{ marginLeft: 40 }}
-              onClick={nextGroup}
-            >
-              下一组
-            </Button>
+            <Row justify="space-around">
+              <Col>
+                <Button type="primary" htmlType="submit">
+                  提交
+                </Button>
+              </Col>
+              <Col>
+                <Button
+                  type="primary"
+                  style={{ marginLeft: 50 }}
+                  onClick={nextGroup}
+                >
+                  下一组
+                </Button>
+              </Col>
+            </Row>
           </Form.Item>
         )}
       </Form>
