@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import store from '../../store/index';
+import store from "../../store/index";
 import { Layout, Menu } from "antd";
 
-import logo from '../../assets/logo.svg';
+import logo from "../../assets/logo.svg";
 import Mark from "../mark";
 
 import { UserOutlined } from "@ant-design/icons";
@@ -32,16 +32,48 @@ export default class init_page extends Component {
     hashHistory.push("/mark/" + position + "/" + groupid);
   };
 
+  getPath = () => {
+    const arr = this.props.location.pathname.split("/");
+    const position = arr[2];
+    const group = arr[3];
+    if (position === "product") {
+      const key = 7 + +group;
+      return key.toString();
+    }
+    else if (position === "design") {
+      const key = 14 + +group;
+      return key.toString();
+    }
+    else if (position === "front") {
+      const key = 21 + +group;
+      return key.toString();
+    }
+    else if (position === "back") {
+      const key = 28 + +group;
+      return key.toString();
+    }
+    else if (position === "show") {
+      const key = 35 + +group;
+      return key.toString();
+    }
+    return group;
+  };
+
   render() {
     return (
       <Layout style={{ minHeight: "100vh" }}>
-          <Header
-            className="site-layout-sub-header-background"
-            style={{ padding: "0 25px", color: "#FFF", fontSize: 18, letterSpacing: 3}}
-          >
-            <img src={logo} alt="" style={{width: 30, marginRight: 15}} />
-            Hackathon评分系统
-          </Header>
+        <Header
+          className="site-layout-sub-header-background"
+          style={{
+            padding: "0 25px",
+            color: "#FFF",
+            fontSize: 18,
+            letterSpacing: 3
+          }}
+        >
+          <img src={logo} alt="" style={{ width: 30, marginRight: 15 }} />
+          Hackathon评分系统
+        </Header>
         <Layout>
           <Sider
             breakpoint="lg"
@@ -58,6 +90,7 @@ export default class init_page extends Component {
               theme="dark"
               mode="inline"
               defaultSelectedKeys={["1"]}
+              selectedKeys={[this.getPath()]} //获取地址，然后根据地址得出此时item的key 然后把这个key放进去
               onClick={this.Click}
             >
               <SubMenu key="director" icon={<UserOutlined />} title="运营组">
@@ -148,5 +181,4 @@ export default class init_page extends Component {
       this.setState({});
     });
   }
-
 }
