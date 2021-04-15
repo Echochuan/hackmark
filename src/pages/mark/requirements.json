@@ -7,37 +7,37 @@
     },
     {
       "label": "线上推广文案",
-      "name": "promotionCopy",
+      "name": "promotion",
       "maxScore": 15
     },
     {
       "label": "活动策划idea",
-      "name": "eventIdea",
+      "name": "idea",
       "maxScore": 15
     },
     {
       "label": "活动策划完整度",
-      "name": "eventIntegrity",
+      "name": "integrity",
       "maxScore": 15
     },
     {
       "label": "后期运营规划",
-      "name": "latePlanning",
+      "name": "planning",
       "maxScore": 15
     },
     {
       "label": "产品交互文案",
-      "name": "interactiveCopywriting",
+      "name": "interactive",
       "maxScore": 10
     },
     {
-      "label": "调研文档推广",
-      "name": "researchPromotion",
+      "label": "调研文档分析",
+      "name": "research",
       "maxScore": 10
     },
     {
       "label": "产品名称",
-      "name": "productName",
+      "name": "product",
       "maxScore": 10
     }
   ],
@@ -54,99 +54,123 @@
     },
     {
       "label": "主题符合度",
-      "name": "Conformity",
+      "name": "conformity",
       "maxScore": 5
     },
     {
       "label": "调研文档",
-      "name": "researhDocument",
+      "name": "researh",
       "maxScore": 10
     },
     {
       "label": "需求文档",
-      "name": "requirementsDocument",
+      "name": "requirements",
       "maxScore": 15
     },
     {
       "label": "产品原型图",
-      "name": "prototypeDrawing",
+      "name": "prototype",
       "maxScore": 15
     },
     {
       "label": "竞品分析",
-      "name": "competingAnalysis",
-      "maxScore": 15
+      "name": "competing",
+      "maxScore": 5
+    },
+    {
+      "label": "需求管理",
+      "name": "req",
+      "maxScore": 5
+    },
+    {
+      "label": "项目管理",
+      "name": "project",
+      "maxScore": 10
+    },
+    {
+      "label": "迭代计划",
+      "name": "plan",
+      "maxScore": 10
     }
   ],
   "design": [
     {
       "label": "设计规范",
-      "name": "designSpecification",
+      "name": "design",
+      "maxScore": 10
+    },
+    {
+      "label": "logo/icon",
+      "name": "logo",
       "maxScore": 15
     },
     {
       "label": "美观性",
       "name": "beauty",
-      "maxScore": 15
+      "maxScore": 10
     },
-
+    {
+      "label": "一致性",
+      "name": "uniformity",
+      "maxScore": 10
+    },
     {
       "label": "友好性",
       "name": "friendliness",
-      "maxScore": 15
+      "maxScore": 10
     },
 
     {
       "label": "可实现性",
-      "name": "realizability",
-      "maxScore": 15
+      "name": "reliability",
+      "maxScore": 10
     },
     {
       "label": "字体选择",
-      "name": "fontSelection",
-      "maxScore": 15
+      "name": "font",
+      "maxScore": 10
     },
     {
       "label": "交互思路",
-      "name": "interactiveThinking",
+      "name": "thinking",
+      "maxScore": 10
+    },
+    {
+      "label": "项目加分",
+      "name": "bonus",
       "maxScore": 15
     }
   ],
   "front": [
     {
       "label": "功能完整性",
-      "name": "functionalIntegrity",
-      "maxScore": 15
+      "name": "function",
+      "maxScore": 30
     },
     {
       "label": "与设计稿贴合程度",
-      "name": "fitDegree",
-      "maxScore": 15
+      "name": "fit",
+      "maxScore": 10
     },
     {
       "label": "布局样式实现",
-      "name": "layoutStyle",
-      "maxScore": 15
+      "name": "layout",
+      "maxScore": 10
     },
     {
       "label": "业务逻辑实现/代码规范/封装性",
       "name": "encapsulation",
-      "maxScore": 15
+      "maxScore": 10
     },
     {
       "label": "页面流畅度/首屏加载优化/资源压缩",
-      "name": "resourcesCompression",
-      "maxScore": 15
+      "name": "resources",
+      "maxScore": 5
     },
     {
       "label": "与后端数据对接完整度",
-      "name": "dockingIntegrity",
-      "maxScore": 15
-    },
-    {
-      "label": "交互思路",
-      "name": "interactiveThink",
-      "maxScore": 15
+      "name": "docking",
+      "maxScore": 5
     }
   ],
   "back": [
@@ -167,64 +191,64 @@
     },
     {
       "label": "HTTPS证书",
-      "name": "HTTPS",
+      "name": "cert",
       "maxScore": 2
     },
     {
       "label": "项目敏感配置",
-      "name": "sensitiveConfiguration",
+      "name": "configuration",
       "maxScore": 3
     },
     {
       "label": "数据敏感信息",
-      "name": "sensitiveInformation",
+      "name": "information",
       "maxScore": 3
     },
     {
       "label": "代码规范性",
-      "name": "codeNormalization",
+      "name": "code",
       "maxScore": 8
     },
     {
       "label": "数据库规范性",
-      "name": "databaseNormalization",
+      "name": "database",
       "maxScore": 6
     },
     {
       "label": "接口文档",
-      "name": "interfaceDocumentation",
+      "name": "interface",
       "maxScore": 3
     },
     {
       "label": "数据库文档",
-      "name": "databaseDocument",
+      "name": "document",
       "maxScore": 3
     },
     {
       "label": "单元测试代码覆盖率",
-      "name": "codeCoverage",
+      "name": "coverage",
       "maxScore": 7
     },
     {
       "label": "能现场给出解决方案",
-      "name": "provideSolution",
+      "name": "solution",
       "maxScore": 5
     }
   ],
   "show": [
     {
       "label": "路演表现",
-      "name": "roadshowPerformance",
+      "name": "performance",
       "maxScore": 20
     },
     {
       "label": "PPT契合项目",
-      "name": "fitProject",
+      "name": "project",
       "maxScore": 10
     },
     {
       "label": "PPT逻辑框架",
-      "name": "logicFramework",
+      "name": "framework",
       "maxScore": 10
     },
     {
@@ -234,27 +258,27 @@
     },
     {
       "label": "PPT设计创意",
-      "name": "designIdeas",
+      "name": "idea",
       "maxScore": 10
     },
     {
       "label": "PPT统一风格",
-      "name": "unifiedStyle",
+      "name": "style",
       "maxScore": 10
     },
     {
       "label": "PPT颜色搭配",
-      "name": "colourPalette",
+      "name": "colour",
       "maxScore": 10
     },
     {
       "label": "PPT动画效果",
-      "name": "animationEffects",
+      "name": "animation",
       "maxScore": 10
     },
     {
       "label": "PPT文案雕琢",
-      "name": "copywritingCarve",
+      "name": "writing",
       "maxScore": 10
     }
   ]
