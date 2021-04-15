@@ -1,17 +1,43 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
+
+body {
+  background: url("../../assets/background.jpg") no-repeat fixed;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  -moz-background-size: cover;
+  margin: 0;
+  padding: 0;
+  /* 用于解决margin-top塌陷 */
+  display: table;
+}
 
 .loginBox {
-    display:flex;
-    width: 50%;
-    margin: 0px auto;
-    margin-top: 30vh;
+  display: flex;
+  /* width: 50%; */
+  width: 40vw;
+  height: 30vh;
+  margin: 0px auto;
+  margin-top: 30vh;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: saturate(180%) blur(3px);
+  border-radius: 12px;
+  padding: 10px;
 }
 
 p {
-    text-align:center;
+  text-align: center;
 }
 
 .loginBox1 {
-    margin: 0px auto;
+  margin: 0px auto;
+}
+
+.login-header{
+    width: 100%;
+    height: 48px;
+    margin-bottom: -2px;
+    text-align: center;
+    /* border-bottom: 1px solid #a09d9d; */
 }
 
