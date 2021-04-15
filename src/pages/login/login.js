@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import store from "../../store/index";
 import logo from "../../assets/logo.svg";
 import { getName, getToken } from "../../action/index";

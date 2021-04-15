@@ -44,6 +44,16 @@ const Demo = props => {
 
   useEffect(resetformData, [info]);
 
+  const getGroup = () => {
+    const user = {...info}.group;
+    if (user === undefined) {
+      return "欢迎使用评分系统"
+    }
+    return "第" + user + "组"
+  }
+
+  const getgroup = getGroup();
+
   //获取并展示当前组别
   const getPosition = () => {
     const user = {...info}
@@ -148,7 +158,7 @@ const nowPosition = getPosition()
         hoverable
         style={{ width: 240 ,margin: "20px auto"}}
       >
-        <Meta title={nowPosition} description={"第" + {...info}.group+ "组" }/>
+        <Meta title={nowPosition} description={getgroup}/>
       </Card>
       <Form {...{ form }} {...layout} onFinish={onFinish}>
         {formData && formData.map(item => <InputNumberItem {...item} />)}
