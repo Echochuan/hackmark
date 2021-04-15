@@ -122,7 +122,6 @@ export default class init_page extends Component {
                 className="site-layout-background"
                 style={{ padding: 24, minHeight: 360 }}
               >
-                {/* 我记得好像可以写在router.js里，然后在这里逐次遍历，但不记得具体怎么写了，先这样用着。你妈的 看起来真丑啊*/}
                 <div className="route">
                   <Mark />
                 </div>
