@@ -1,11 +1,11 @@
 import React from "react";
-import axios from 'axios';
+import axios from "axios";
 import store from "../../store/index";
 import logo from "../../assets/logo.svg";
-import { getName, getToken } from "../../action/index";
+import { getToken, getId } from "../../action/index";
 import "./login.css";
 
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, message } from "antd";
 
 import createHashHistory from "history/createHashHistory";
 const hashHistory = createHashHistory();
@@ -29,24 +29,34 @@ class Login extends React.Component {
     };
 
     const onFinish = values => {
-      //把values传给后端判断是否正确 如果正确 跳转到下一个页面并把username存储进store，如果不正确 则提示错误
-      //也可以把username传过去，拿来password 判断password是不是相等
-      const action1 = getName(values.username);
-      store.dispatch(action1); //将输入的username存入store中
 
-      const token = "balbabla";
-      const action2 = getToken(token);
-      store.dispatch(action2); //将token存入store中
-
-      const id = { username: "1", password: "1" };
-      console.log(hashHistory);
-      if (id.username === values.username && id.password === values.password) {
-        console.log("yes!");
-        hashHistory.push("/mark");
-      } else {
-        alert("信息错误");
-      }
-      console.log("Success:", values);
+      axios({
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        url: "/api/login",
+        data: {
+          username: values.username,
+          password: values.password
+        }
+      })
+        .then(function(response) {
+          if (response.status === 200) {
+            const token = response.data.token;
+            const id = response.data.user_id;
+            const action = getId(id);
+            const action2 = getToken(token);
+            store.dispatch(action);
+            store.dispatch(action2); //将token存入store中
+            hashHistory.push("/mark");
+          }
+          console.log(response);
+        })
+        .catch(function(error) {
+          message.error("登陆失败");
+          console.log(error);
+        });
+      // console.log(hashHistory);
+      // console.log("Success:", values);
     };
 
     const onFinishFailed = errorInfo => {
@@ -65,7 +75,7 @@ class Login extends React.Component {
             //   letterSpacing: 3
             // }}
           >
-            <img src={logo} alt="" style={{ width: 30, marginLeft: 15}} />
+            <img src={logo} alt="" style={{ width: 30, marginLeft: 15 }} />
           </div>
           <Form
             {...layout}
@@ -115,7 +125,7 @@ class Login extends React.Component {
 
   componentDidMount() {
     store.subscribe(() => {
-      console.log("subscribe", store.getState());
+      // console.log("subscribe", store.getState());
       this.setState({});
     });
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import store from "../../store/index";
-import { Layout, Menu } from "antd";
+// eslint-disable-next-line
+import { Layout, Menu, message } from "antd";
 
 import logo from "../../assets/logo.svg";
 import Mark from "../mark";
@@ -196,9 +197,9 @@ export default class init_page extends Component {
 
   componentDidMount() {
     console.log("subscribe", store.getState());
-    // const name = store.getState().username;
-    // if (name === '') {
-    //   alert('请先登陆！');
+    // const token = store.getState().token;
+    // if (token === '') {
+    //   message.warning('请先登陆！');
     //   hashHistory.push('/')
     // }
     store.subscribe(() => {

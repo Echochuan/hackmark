@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import store from "../../store/index";
+import axios from "axios";
 import { Form, Button, notification, message, Card, Row, Col } from "antd";
 
 import { withRouter } from "react-router-dom";
@@ -16,7 +17,7 @@ const { Meta } = Card;
 
 const layout = {
   labelCol: { sm: 7, lg: 6 },
-  wrapperCol: { sm: 10, lg: 12 },
+  wrapperCol: { sm: 10, lg: 12 }
 };
 
 const buttonItemLayout = {
@@ -30,7 +31,7 @@ const buttonItemLayout = {
       span: 12
     }
   }
-}
+};
 
 const analyzePath = path => {
   const arr = path.split("/");
@@ -62,40 +63,35 @@ const Demo = props => {
   useEffect(resetformData, [info]);
 
   const getGroup = () => {
-    const user = {...info}.group;
+    const user = { ...info }.group;
     if (user === undefined) {
-      return "欢迎使用评分系统"
+      return "欢迎使用评分系统";
     }
-    return `第${user}组`
-  }
+    return `第${user}组`;
+  };
 
   const getgroup = getGroup();
 
   //获取并展示当前组别
   const getPosition = () => {
-    const user = { ...info }
-    console.log(user.position)
+    const user = { ...info };
+    console.log(user.position);
     if (user.position === "director") {
-      return "运营组"
+      return "运营组";
+    } else if (user.position === "product") {
+      return "产品组";
+    } else if (user.position === "design") {
+      return "设计组";
+    } else if (user.position === "front") {
+      return "前端组";
+    } else if (user.position === "back") {
+      return "后端组";
+    } else if (user.position === "show") {
+      return "路演";
     }
-    else if (user.position === "product") {
-      return "产品组"
-    }
-    else if (user.position === "design") {
-      return "设计组"
-    }
-    else if (user.position === "front") {
-      return "前端组"
-    }
-    else if (user.position === "back") {
-      return "后端组"
-    }
-    else if (user.position === "show") {
-      return "路演"
-    }
-  }
+  };
 
-  const nowPosition = getPosition()
+  const nowPosition = getPosition();
 
   //路由切换时清空表单中的内容
   useEffect(() => {
@@ -137,50 +133,47 @@ const Demo = props => {
   };
 
   const onFinish = values => {
-    // const oldpath = props.location.pathname;
-    // const newpathArr = oldpath.split("/");
-    // const position = newpathArr[2];
-    // const groupIndex = newpathArr[3];
-    // console.log(position);
-    // console.log(groupIndex);
-    // console.log(values);
-    // console.log(newValues);
-    //各个考察点以及分值
-    // const newValues = {...values};
     const newValues = toNumberValue(values);
-    const username = store.getState().username;
-    const token = store.getState().token;
+    const user_id = store.getState().user_id;
+    // const token = store.getState().token;
+    console.log(store.getState().token)
     const user = { ...info };
+    console.log(`/api/${user.position}/${user.group}`)
 
     // const keyP = "position";
-    const keyG = "group";
-    const keyN = "username";
-    const keyT = "token";
+    const keyG = "group_id";
+    const keyN = "name";
+    const keyU = "user_id";
+    // const keyT = "token";
     // newValues[keyP] = user.position;
     newValues[keyG] = user.group;
-    newValues[keyN] = username;
-    newValues[keyT] = token;
+    newValues[keyN] = "6109119066";
+    // newValues[keyT] = token;
+    newValues[keyU] = user_id;
 
-    // console.log(username);
-    // console.log(user);
     console.log(newValues);
 
-    openNotification();
+    axios({
+      method: "POST",
+      headers: { "Content-type": "application/json", "authorization": store.getState().token },
+      url: `/api/${user.position}/${user.group}`,
+      data: newValues
+    })
+      .then(function(response) {
+        console.log(response);
+        openNotification();
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   };
-
 
   return (
     <>
-      <Card
-        hoverable
-        style={{ width: 240, margin: "20px auto" }}
-      >
-        <Meta title={nowPosition} description={getgroup}/>
+      <Card hoverable style={{ width: 240, margin: "20px auto" }}>
+        <Meta title={nowPosition} description={getgroup} />
       </Card>
-      <Form
-        {...{ form }}
-        {...layout}
-        onFinish={onFinish}>
+      <Form {...{ form }} {...layout} onFinish={onFinish}>
         {formData && formData.map(item => <InputNumberItem {...item} />)}
         {formData && formData.length > 0 && (
           <Form.Item {...buttonItemLayout}>

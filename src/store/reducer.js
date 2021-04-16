@@ -10,6 +10,8 @@ export default (state = defaultState, action) => {
         return Object.assign({}, state, action)
     } else if (action['type'] === 'get_token') {
         return Object.assign({}, state, action)
+    } else if (action['type'] === 'get_id') {
+        return Object.assign({}, state, action)
     }
     return state;
 }

@@ -8,7 +8,13 @@ const getToken = (value) => ({
     token: value
 })
 
+const getId = (value) => ({
+    type: 'get_id',
+    user_id: value
+})
+
 module.exports = {
     getName,
-    getToken
+    getToken,
+    getId
 };
