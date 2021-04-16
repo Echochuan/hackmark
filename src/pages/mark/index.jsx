@@ -99,18 +99,16 @@ const Demo = props => {
     setInfo(analyzePath(props.history.location.pathname));
   }, [form, props.history.location]);
 
-  const warning = () => {
-    message.warning("已完成所有小组评分");
-  };
-
   const nextGroup = () => {
     //获取现在是第几组，如果是1-6组，点击后跳转到下一组；如果是第7组，则出一个alert说评分已结束
     const user = { ...info };
     const groupid = +user.group + 1;
     console.log(groupid);
     if (user.group === "7") {
-      warning();
+      message.warning("已完成所有小组评分");
       return;
+    } else {
+      message.success("已切换到下一组");
     }
     hashHistory.push("/mark/" + user.position + "/" + groupid);
   };
@@ -164,6 +162,7 @@ const Demo = props => {
         openNotification();
       })
       .catch(function(error) {
+        message.error('请勿重复评分');
         console.log(error);
       });
   };
