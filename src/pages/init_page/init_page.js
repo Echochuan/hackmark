@@ -17,19 +17,22 @@ const { SubMenu } = Menu;
 export default class init_page extends Component {
   constructor(props) {
     super(props);
-    this.state =  {
-        collapsed: true
-    }
-}
+    this.state = {
+      collapsed: true,
+    };
+  }
   toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    }, () => {
-      console.log(this.state.collapsed)
-    });
+    this.setState(
+      {
+        collapsed: !this.state.collapsed,
+      },
+      () => {
+        console.log(this.state.collapsed);
+      }
+    );
   };
 
-  updata = value => {
+  updata = (value) => {
     // console.log("updata start");
     // console.log(value);
     value = value % 7;
@@ -42,12 +45,18 @@ export default class init_page extends Component {
   //判断是否为移动设备
   isMobile = () => {
     var sUserAgent = navigator.userAgent;
-    if (sUserAgent.indexOf('Android') > -1 || sUserAgent.indexOf('iPhone') > -1 || sUserAgent.indexOf('iPad') > -1 || sUserAgent.indexOf('iPod') > -1 || sUserAgent.indexOf('Symbian') > -1) {
+    if (
+      sUserAgent.indexOf("Android") > -1 ||
+      sUserAgent.indexOf("iPhone") > -1 ||
+      sUserAgent.indexOf("iPad") > -1 ||
+      sUserAgent.indexOf("iPod") > -1 ||
+      sUserAgent.indexOf("Symbian") > -1
+    ) {
       return true;
     }
-  }
+  };
 
-  Click = e => {
+  Click = (e) => {
     if (this.isMobile()) {
       this.toggle();
     }
@@ -91,7 +100,7 @@ export default class init_page extends Component {
             padding: "0 25px",
             color: "#FFF",
             fontSize: 18,
-            letterSpacing: 3
+            letterSpacing: 3,
           }}
         >
           <img src={logo} alt="" style={{ width: 30, marginRight: 15 }} />
@@ -103,12 +112,12 @@ export default class init_page extends Component {
             collapsedWidth="0"
             collapsed={this.state.collapsed}
             collapsible
-            onBreakpoint={broken => {
+            onBreakpoint={(broken) => {
               console.log(broken);
             }}
             onCollapse={(collapsed, type) => {
               console.log(collapsed, type);
-              this.toggle()
+              this.toggle();
             }}
           >
             <div className="logo" />

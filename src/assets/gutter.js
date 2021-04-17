@@ -6,6 +6,6 @@ export const layout = {
 export const buttonItemLayout = {
   wrapperCol: {
     span: 12,
-    offset: 9
-  }
+    offset: 9,
+  },
 };

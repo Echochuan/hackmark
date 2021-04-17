@@ -17,27 +17,27 @@ const { Meta } = Card;
 
 const layout = {
   labelCol: { sm: 7, lg: 6 },
-  wrapperCol: { sm: 10, lg: 12 }
+  wrapperCol: { sm: 10, lg: 12 },
 };
 
 const buttonItemLayout = {
   wrapperCol: {
     sm: {
       offset: 7,
-      span: 9
+      span: 9,
     },
     lg: {
       offset: 6,
-      span: 12
-    }
-  }
+      span: 12,
+    },
+  },
 };
 
-const analyzePath = path => {
+const analyzePath = (path) => {
   const arr = path.split("/");
   return {
     position: arr[2],
-    group: arr[3]
+    group: arr[3],
   };
 };
 
@@ -47,11 +47,11 @@ const openNotification = () => {
     description: "你已完成该组的评分。",
     onClick: () => {
       console.log("Notification Clicked!");
-    }
+    },
   });
 };
 
-const Demo = props => {
+const Demo = (props) => {
   const [form] = Form.useForm();
   const [info, setInfo] = useState({});
   const [formData, setFormData] = useState([]);
@@ -113,7 +113,7 @@ const Demo = props => {
     hashHistory.push("/mark/" + user.position + "/" + groupid);
   };
 
-  const toNumberValue = obj => {
+  const toNumberValue = (obj) => {
     if (obj instanceof Array) {
       var arr = [];
       for (var i = 0; i < obj.length; i++) {
@@ -130,13 +130,13 @@ const Demo = props => {
     return obj;
   };
 
-  const onFinish = values => {
+  const onFinish = (values) => {
     const newValues = toNumberValue(values);
     const user_id = store.getState().user_id;
     // const token = store.getState().token;
-    console.log(store.getState().token)
+    console.log(store.getState().token);
     const user = { ...info };
-    console.log(`/api/${user.position}/${user.group}`)
+    console.log(`/api/${user.position}/${user.group}`);
 
     // const keyP = "position";
     const keyG = "group_id";
@@ -153,16 +153,19 @@ const Demo = props => {
 
     axios({
       method: "POST",
-      headers: { "Content-type": "application/json", "authorization": store.getState().token },
+      headers: {
+        "Content-type": "application/json",
+        authorization: store.getState().token,
+      },
       url: `/api/${user.position}/${user.group}`,
-      data: newValues
+      data: newValues,
     })
-      .then(function(response) {
+      .then(function (response) {
         console.log(response);
         openNotification();
       })
-      .catch(function(error) {
-        message.error('请勿重复评分');
+      .catch(function (error) {
+        message.error("请勿重复评分");
         console.log(error);
       });
   };
@@ -173,7 +176,7 @@ const Demo = props => {
         <Meta title={nowPosition} description={getgroup} />
       </Card>
       <Form {...{ form }} {...layout} onFinish={onFinish}>
-        {formData && formData.map(item => <InputNumberItem {...item} />)}
+        {formData && formData.map((item) => <InputNumberItem {...item} />)}
         {formData && formData.length > 0 && (
           <Form.Item {...buttonItemLayout}>
             <Row justify="space-around">

@@ -14,32 +14,31 @@ class Login extends React.Component {
   render() {
     const layout = {
       labelCol: {
-        span: 8
+        span: 8,
       },
       wrapperCol: {
-        span: 16
-      }
+        span: 16,
+      },
     };
 
     const tailLayout = {
       wrapperCol: {
         offset: 8,
-        span: 16
-      }
+        span: 16,
+      },
     };
 
-    const onFinish = values => {
-
+    const onFinish = (values) => {
       axios({
         method: "POST",
         headers: { "Content-type": "application/json" },
         url: "/api/login",
         data: {
           username: values.username,
-          password: values.password
-        }
+          password: values.password,
+        },
       })
-        .then(function(response) {
+        .then(function (response) {
           if (response.status === 200) {
             const token = response.data.token;
             const id = response.data.user_id;
@@ -51,7 +50,7 @@ class Login extends React.Component {
           }
           console.log(response);
         })
-        .catch(function(error) {
+        .catch(function (error) {
           message.error("登陆失败");
           console.log(error);
         });
@@ -59,7 +58,7 @@ class Login extends React.Component {
       // console.log("Success:", values);
     };
 
-    const onFinishFailed = errorInfo => {
+    const onFinishFailed = (errorInfo) => {
       console.log("Failed:", errorInfo);
     };
 
@@ -81,7 +80,7 @@ class Login extends React.Component {
             {...layout}
             name="basic"
             initialValues={{
-              remember: true
+              remember: true,
             }}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
@@ -92,8 +91,8 @@ class Login extends React.Component {
               rules={[
                 {
                   required: true,
-                  message: "Please input your username!"
-                }
+                  message: "Please input your username!",
+                },
               ]}
             >
               <Input />
@@ -105,8 +104,8 @@ class Login extends React.Component {
               rules={[
                 {
                   required: true,
-                  message: "Please input your password!"
-                }
+                  message: "Please input your password!",
+                },
               ]}
             >
               <Input.Password />
