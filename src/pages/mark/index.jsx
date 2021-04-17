@@ -136,7 +136,7 @@ const Demo = (props) => {
     // const token = store.getState().token;
     console.log(store.getState().token);
     const user = { ...info };
-    console.log(`/api/${user.position}/${user.group}`);
+    console.log(`http://121.199.32.101:8088/${user.position}/${user.group}`);
 
     // const keyP = "position";
     const keyG = "group_id";
@@ -157,7 +157,7 @@ const Demo = (props) => {
         "Content-type": "application/json",
         authorization: store.getState().token,
       },
-      url: `/api/${user.position}/${user.group}`,
+      url: `http://121.199.32.101:8088/${user.position}/${user.group}`,
       data: newValues,
     })
       .then(function (response) {

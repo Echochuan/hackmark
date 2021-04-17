@@ -32,7 +32,7 @@ class Login extends React.Component {
       axios({
         method: "POST",
         headers: { "Content-type": "application/json" },
-        url: "/api/login",
+        url: "http://121.199.32.101:8088/login",
         data: {
           username: values.username,
           password: values.password,
