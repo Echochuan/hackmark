@@ -206,11 +206,11 @@ export default class init_page extends Component {
 
   componentDidMount() {
     console.log("subscribe", store.getState());
-    // const token = store.getState().token;
-    // if (token === '') {
-    //   message.warning('请先登陆！');
-    //   hashHistory.push('/')
-    // }
+    const token = store.getState().token;
+    if (token === '') {
+      message.warning('请先登陆！');
+      hashHistory.push('/')
+    }
     store.subscribe(() => {
       console.log("subscribe", store.getState());
       this.setState({});
